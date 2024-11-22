@@ -2,11 +2,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 This app uses Next.js + React + PostgreSQL + Prisma + Typescript/Javascript + TailwindCSS (Optional)
-Before starting, make sure you have nodejs and docker desktop installed 
+
+Before starting, make sure you have nodejs and docker desktop installed
+
 (has to be this link for docker[https://docs.docker.com/get-started/get-docker/](https://docs.docker.com/get-started/get-docker/))
 
 Inside the prisma folder you will find a schema, that is where we can create our models for data.
+
 The api folder contains the backend data functions
+
 The (pages) folder contains the various pages the website will contain
 
 Steps to run:
