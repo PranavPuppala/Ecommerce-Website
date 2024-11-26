@@ -31,13 +31,14 @@ npm install
 docker-compose up -d
 # then
 npx prisma migrate dev
+
+# Step 5: now you can run the application (Make sure you are back to the base directory /Group09EcommerceWebsite/
+npm run dev
+
 # then for test product info to be put into database,
 cd src/utils
 # then run
 node test.js
-
-# Step 5: now you can run the application (Make sure you are back to the base directory /Group09EcommerceWebsite/
-npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
