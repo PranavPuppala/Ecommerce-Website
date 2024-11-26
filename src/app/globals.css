@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light Theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Dark Theme (optional, uncomment to enable) */
 /*
 @media (prefers-color-scheme: dark) {
   :root {
@@ -14,10 +16,50 @@
     --foreground: #ededed;
   }
 }
-  */
+*/
 
+/* Body Styling */
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.card p {
+  color: var(--foreground);
+  font-size: 0.875rem;
+}
+
+.star {
+  color: #fbbf24; /* Amber color for stars */
+  font-size: 1rem;
+  line-height: 1;
+}
+

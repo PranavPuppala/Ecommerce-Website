@@ -10,6 +10,7 @@ type ProductState = {
   description: string;
   price: number;
   imageUrl: string;
+  rating: number; // Include rating
 };
 
 type ProductResponse = {
@@ -19,6 +20,7 @@ type ProductResponse = {
 
 export default function Home() {
   const router = useRouter();
+  const [products, setProducts] = useState<ProductState[]>([]);
 
   useEffect(() => {
     fetchProducts();
@@ -32,39 +34,38 @@ export default function Home() {
 
       const response = (await result.json()) as ProductResponse;
 
-      setProducts(response.data);
-
       if (!result.ok) {
         router.push("/not-found");
-        throw new Error("Error fetching donor");
+        throw new Error("Error fetching products");
       }
+
+      setProducts(response.data);
     } catch (error) {
       console.error(error);
       router.push("/not-found");
     }
   };
 
-  const [products, setProducts] = useState<ProductState[]>([]);
-
   return (
-    <div className="px-4 my-8">
+    <div className="container my-8">
       <Banner />
-      {/* New Arrivals*/}
+      {/* New Arrivals */}
       <div className="text-center my-8">
         <h2 className="text-3xl font-semibold text-gray-800">New Arrivals</h2>
         <p className="text-lg text-gray-500">Explore the latest products</p>
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-        {products.map((product, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {products.map((product) => (
           <ProductCard
-            key={index}
+            key={product.id}
             id={product.id}
             name={product.name}
-            //description={product.description}
+            description={product.description}
             price={product.price}
             imageUrl={product.imageUrl}
+            rating={product.rating} // Pass rating
           />
         ))}
       </div>
