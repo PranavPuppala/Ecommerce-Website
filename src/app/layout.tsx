@@ -1,3 +1,4 @@
+import { CartProvider } from "@/context/CartContext"; // Import the CartProvider
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -27,10 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-y-auto`}>
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-y-auto`}
+      >
+        <CartProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
