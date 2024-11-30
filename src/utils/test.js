@@ -499,11 +499,12 @@ const testProducts = [
     orderId: null,
   },
 ];
-
+/*
 // Add random star ratings to each product
 testProducts.forEach((product) => {
   product.rating = Math.floor(Math.random() * 5) + 1; // Generate random rating between 1 and 5
 });
+*/
 
 const test = async () => {
   try {
@@ -520,7 +521,7 @@ const test = async () => {
     if (!response.ok) {
       throw new Error("Response not ok");
     }
-    console.log("Products uploaded successfully with random ratings!");
+    console.log("Products uploaded successfully!");
   } catch (error) {
     console.error("Error uploading products:", error);
   }

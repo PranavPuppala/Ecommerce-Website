@@ -46,19 +46,19 @@ export default function Home() {
   };
 
   return (
-    <div className="container my-8">
+    <div className="px-4 my-8">
       <Banner />
-      {/* New Arrivals */}
+      {/* New Arrivals*/}
       <div className="text-center my-8">
         <h2 className="text-3xl font-semibold text-gray-800">New Arrivals</h2>
         <p className="text-lg text-gray-500">Explore the latest products</p>
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {products.map((product) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        {products.map((product, index) => (
           <ProductCard
-            key={product.id}
+            key={index}
             id={product.id}
             name={product.name}
             price={product.price}
