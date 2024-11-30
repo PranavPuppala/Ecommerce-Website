@@ -9,7 +9,7 @@ type ProductState = {
   name: string;
   description: string;
   price: number;
-  imageUrl: string;
+  imageUrl: string[];
 };
 
 type ProductResponse = {
@@ -36,7 +36,7 @@ export default function Home() {
 
       if (!result.ok) {
         router.push("/not-found");
-        throw new Error("Error fetching donor");
+        throw new Error("Error fetching");
       }
     } catch (error) {
       console.error(error);
@@ -62,9 +62,8 @@ export default function Home() {
             key={index}
             id={product.id}
             name={product.name}
-            //description={product.description}
             price={product.price}
-            imageUrl={product.imageUrl}
+            imageUrl={product.imageUrl[0]}
           />
         ))}
       </div>

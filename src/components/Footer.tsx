@@ -134,9 +134,20 @@ export default function Footer() {
                 </svg>
               </Link>
             </div>
+            <div className="mt-4">
+              <span>Get the latest deals and more.</span>
+              <div className="flex items-center space-x-2 mt-2">
+                <input
+                  type="text"
+                  className="border border-gray-300 rounded px-2 placeholder-gray-500"
+                  placeholder="Enter email address"
+                />
+                <button className="text-sm bg-blue-600 text-white px-4 h-6 rounded whitespace-nowrap">Sign Up</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div></div>
+
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
           &copy; {new Date().getFullYear()} Commerce Electronics. All rights reserved.
         </div>

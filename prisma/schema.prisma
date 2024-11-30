@@ -8,40 +8,34 @@ datasource db {
 }
 
 model Product {
-    id          String  @id @default(uuid())
-    name        String
-    description String
-    price       Float
-    quantity    Int
-    category    String
-    rating      Float   @default(0)
-    //specificationId String?        @unique
-    //specs           Specification? @relation(fields: [specificationId], references: [id])
-    isOnSale    Boolean @default(false)
-    imageUrl    String?
-    orderId     String?
-    order       Order?  @relation(fields: [orderId], references: [id])
+    id            String         @id @default(uuid())
+    name          String
+    description   String
+    features      String[]
+    price         Float
+    quantity      Int
+    category      String
+    brand         String
+    specs         Specification?
+    originalPrice Float
+    imageUrl      String[]
+    orderId       String?
+    order         Order?         @relation(fields: [orderId], references: [id])
 }
 
-//model Specification {
-//id               String   @id @default(uuid())
-//processor        String?
-//memory           String?
-//storage          String?
-//displayType      String?
-//screenSize       String?
-//screenResolution String?
-//color            String?
-//operatingSystem  String?
-//cameraFront      Boolean?
-//cameraFrontRes   String?
-//cameraBack       Boolean?
-//cameraBackRes    String?
-//releaseDate      String?
-//brand            String?
-//Product          Product? @relation(fields: [productId], references: [id])
-//productId        String?
-//}
+model Specification {
+    id               String  @id @default(uuid())
+    processor        String?
+    graphics         String?
+    memory           String?
+    storage          String?
+    displayType      String?
+    screenSize       String?
+    screenResolution String?
+    color            String?
+    productId        String  @unique
+    Product          Product @relation(fields: [productId], references: [id])
+}
 
 model User {
     id     String  @id @default(uuid())

@@ -1,17 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/db/db";
+import { Product } from "@prisma/client";
 
 // Create a product
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const data = await prisma.product.createMany({
-      data: body,
-    });
+    const { products } = await req.json();
+
+    for (const product of products) {
+      await prisma.product.create({
+        data: {
+          ...product,
+          specs: {
+            create: product.specs,
+          },
+        },
+      });
+    }
     return NextResponse.json(
       {
         message: "Successfully created products",
-        data: data,
       },
       { status: 200 }
     );

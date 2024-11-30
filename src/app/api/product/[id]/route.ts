@@ -9,6 +9,9 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
       where: {
         id: id,
       },
+      include: {
+        specs: true,
+      },
     });
 
     if (!data) {

@@ -24,7 +24,11 @@ export async function POST(req: NextRequest) {
 // Get all products
 export async function GET() {
   try {
-    const data = await prisma.product.findMany();
+    const data = await prisma.product.findMany({
+      include: {
+        specs: true,
+      },
+    });
 
     if (!data) {
       return NextResponse.json({ message: "Products not found" }, { status: 404 });

@@ -21,7 +21,7 @@ export const ProductCard = ({ id, name, description, price, imageUrl }: ProductP
             className="object-contain"
             width={190}
             height={160}
-            style={{ height: "auto", width: "auto" }}
+            style={{ objectFit: "contain", maxHeight: "100%", maxWidth: "100%" }}
           />
         </div>
         <div className="p-4">
