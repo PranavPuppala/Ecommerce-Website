@@ -12,9 +12,9 @@ export const HamburgerMenu = () => {
   const menuItems = [
     { name: "TV", href: "/product/category/TV" },
     { name: "Computers & Tablets", href: "/product/category/Computers" },
-    { name: "Cell Phones", href: "/product/category/CellPhones" },
+    { name: "Cell Phones", href: "/product/category/Phones" },
     { name: "Audio", href: "/product/category/Audio" },
-    { name: "Video Games", href: "/product/category/VideoGames" },
+    { name: "Video Games", href: "/product/category/Gaming" },
   ];
 
   return (

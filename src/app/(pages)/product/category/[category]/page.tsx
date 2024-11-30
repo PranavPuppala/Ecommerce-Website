@@ -1,8 +1,10 @@
+import CategoryProducts from "./CategoryProducts";
+
 export default async function Products({ params }: { params: { category: string } }) {
   const { category } = await params;
   return (
     <div>
-      <p>display products relating to categories i guess {category}</p>
+      <CategoryProducts category={category} />
     </div>
   );
 }

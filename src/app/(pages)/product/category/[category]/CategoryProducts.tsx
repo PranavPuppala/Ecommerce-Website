@@ -1,5 +1,6 @@
 "use client";
 
+import { SpecState } from "@/components/products/page/states";
 import { ProductCard } from "@/components/products/ProductCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,9 +9,14 @@ type ProductState = {
   id: string;
   name: string;
   description: string;
+  features: string[];
   price: number;
-  imageUrl: string;
+  quantity: number;
   category: string;
+  brand: string;
+  specs: SpecState;
+  originalPrice: number;
+  imageUrl: string[];
 };
 
 type ProductResponse = {
@@ -18,7 +24,7 @@ type ProductResponse = {
   data: ProductState[];
 };
 
-export default function ComputersProducts() {
+export default function CategoryProducts({ category }: { category: string }) {
   const router = useRouter();
   const [products, setProducts] = useState<ProductState[]>([]);
 
@@ -34,10 +40,8 @@ export default function ComputersProducts() {
 
       const response = (await result.json()) as ProductResponse;
 
-      const computerProducts = response.data.filter(product => 
-        product.category?.toLowerCase() === 'computers'
-      );
-      setProducts(computerProducts);
+      const products = response.data.filter((product: any) => product.category === category);
+      setProducts(products);
 
       if (!result.ok) {
         router.push("/not-found");
@@ -52,18 +56,18 @@ export default function ComputersProducts() {
   return (
     <div className="px-4 my-8">
       <div className="text-center my-8">
-        <h2 className="text-3xl font-semibold text-gray-800">Computers & Tablets</h2>
-        <p className="text-lg text-gray-500">Explore our computing devices</p>
+        <h2 className="text-3xl font-semibold text-gray-800">{category}</h2>
+        <p className="text-lg text-gray-500">Explore our selection of devices</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         {products.map((product) => (
           <ProductCard
-            key={product.id}
+            key={product.name}
             id={product.id}
             name={product.name}
             price={product.price}
-            imageUrl={product.imageUrl}
+            imageUrl={product.imageUrl[0]}
           />
         ))}
       </div>
