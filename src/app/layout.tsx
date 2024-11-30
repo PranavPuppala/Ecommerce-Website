@@ -28,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-y-auto`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-y-auto`}>
         <CartProvider>
           <Header />
           <main className="flex-grow">{children}</main>
