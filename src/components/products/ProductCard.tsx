@@ -11,6 +11,7 @@ type ProductProps = {
 };
 
 export const ProductCard = ({ id, name, description, price, imageUrl }: ProductProps) => {
+  const rating = 0;
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <Link href={"/product/[id]"} as={`/product/${encodeURIComponent(id)}`}>
@@ -26,9 +27,22 @@ export const ProductCard = ({ id, name, description, price, imageUrl }: ProductP
         </div>
         <div className="p-4">
           <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
-          <p className="text-sm text-gray-500">{description}</p>
+          {description && <p className="text-sm text-gray-500">{description}</p>}
+          <div className="mt-2 flex items-center">
+            {/* Display Stars */}
+            <div className="flex items-center">
+              {Array(rating)
+                .fill(0)
+                .map((_, i) => (
+                  <span key={i} className="star text-yellow-400 text-lg">
+                    ★
+                  </span>
+                ))}
+              <span className="ml-2 text-sm text-gray-500">({rating}/5)</span>
+            </div>
+          </div>
           <div className="mt-3 flex justify-between items-center">
-            <span className="text-xl font-bold text-gray-900">${price}</span>
+            <span className="text-xl font-bold text-gray-900">${price.toFixed(2)}</span>
           </div>
         </div>
       </Link>

@@ -23,6 +23,14 @@ model Product {
     order         Order?         @relation(fields: [orderId], references: [id])
 }
 
+model Review {
+    id        Int      @id @default(autoincrement())
+    customer  String
+    rating    Int
+    comment   String
+    createdAt DateTime @default(now())
+}
+
 model Specification {
     id               String  @id @default(uuid())
     processor        String?
