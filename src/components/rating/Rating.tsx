@@ -128,7 +128,7 @@ export const Rating: React.FC<RatingProps> = ({
   };
 
   return (
-    <div className="inline-flex gap-2">
+    <div className="inline-flex">
       {[...new Array(numberOfStar)].map((arr, index) =>
         enableUserInteraction ? withUserInteraction(index) : withoutUserInteraction(index)
       )}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Rating } from "../../rating/Rating";
 import { CardboardBox, CartFill } from "./icons/ProductIcons";
 import { handleShippingDate } from "./ShippingDate";
-import { SpecState } from "./states";
+import { ReviewState, SpecState } from "./states";
 
 export const InfoPanel = ({
   name,
@@ -11,6 +11,7 @@ export const InfoPanel = ({
   quantity,
   brand,
   specs,
+  reviews,
 }: {
   name: string;
   price: number;
@@ -18,7 +19,10 @@ export const InfoPanel = ({
   quantity: number;
   brand: string;
   specs: SpecState;
+  reviews: ReviewState[];
 }) => {
+  const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
+
   return (
     <div className="flex flex-col w-1/3 min-w-[300px]">
       <h1 className="text-sm">
@@ -28,10 +32,10 @@ export const InfoPanel = ({
       </h1>
       <h1 className="text-2xl font-semibold text-wrap">{name}</h1>
       <div className="flex flex-row gap-x-3 items-center my-6">
-        <Rating ratingInPercent={3.4 * 20} iconSize="m" showOutOf={true} enableUserInteraction={false} />
+        <Rating ratingInPercent={averageRating * 20} iconSize="l" showOutOf={true} enableUserInteraction={false} />
         <h1 className="text-sm">
           <Link href="/" className="text-blue-600 font-semibold hover:underline">
-            {3.4} <span className="font-normal"> {"(0 reviews)"}</span>
+            {averageRating.toFixed(1)} <span className="font-normal"> {`(${reviews.length} reviews)`}</span>
           </Link>
         </h1>
       </div>

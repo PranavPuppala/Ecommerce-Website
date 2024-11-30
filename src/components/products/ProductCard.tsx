@@ -29,7 +29,7 @@ export const ProductCard = ({ id, name, description, price, imageUrl }: ProductP
           {description && <p className="text-sm text-gray-500">{description}</p>}
           <div className="mt-2 flex items-center">
             {/* Display Stars */}
-            <div className="flex items-center"></div>
+            <div className="flex items-center">stars stars stars</div>
           </div>
           <div className="mt-3 flex justify-between items-center">
             <span className="text-xl font-bold text-gray-900">${price.toFixed(2)}</span>

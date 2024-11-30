@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/db/db";
-import { Product } from "@prisma/client";
 
 // Create a product
 export async function POST(req: NextRequest) {
@@ -13,6 +12,9 @@ export async function POST(req: NextRequest) {
           ...product,
           specs: {
             create: product.specs,
+          },
+          reviews: {
+            create: product.reviews,
           },
         },
       });

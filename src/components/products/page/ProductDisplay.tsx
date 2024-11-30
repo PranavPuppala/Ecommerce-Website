@@ -6,12 +6,14 @@ import { InfoPanel } from "./InfoPanel";
 import { ProductResponse, ProductState } from "./states";
 import { DescriptionPanel } from "./DescriptionPanel";
 import { HighlightsPanel } from "./Highlights";
+import { ReviewsPanel } from "@/components/reviews/ReviewsPanel";
 
 export const ProductDisplay = ({ id }: { id: string }) => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [product, setProduct] = useState<ProductState>({
+    id: "",
     name: "",
     description: "",
     features: [],
@@ -31,6 +33,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
     },
     originalPrice: 0,
     imageUrl: [],
+    reviews: [],
   });
 
   const fetchProduct = async () => {
@@ -42,6 +45,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
       const response = (await result.json()) as ProductResponse;
 
       setProduct({
+        id: response.data.id,
         name: response.data.name,
         description: response.data.description,
         features: response.data.features,
@@ -61,6 +65,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
         },
         originalPrice: response.data.originalPrice,
         imageUrl: response.data.imageUrl,
+        reviews: response.data.reviews,
       });
 
       if (!result.ok) {
@@ -91,6 +96,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
           quantity={product.quantity}
           brand={product.brand}
           specs={product.specs}
+          reviews={product.reviews}
         />
       </div>
       <div className="mt-20">
@@ -124,6 +130,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
       </div>
       <div className="mt-10">
         <span className="text-lg font-semibold">Reviews</span>
+        <ReviewsPanel reviews={product.reviews} />
       </div>
     </div>
   );

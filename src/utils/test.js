@@ -59,6 +59,42 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61n7MpBGeBL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Crystal Clear Sound!",
+        comment:
+          "The audio quality is unmatched, and the noise cancellation is top-notch. Perfect for commuting or working in noisy environments.",
+        rating: 5,
+      },
+      {
+        title: "Super Comfortable Fit",
+        comment: "These earbuds fit perfectly and stay in place even during workouts. Comfort level is incredible!",
+        rating: 5,
+      },
+      {
+        title: "Good, but Pricey",
+        comment: "The sound quality and features are excellent, but the price is a bit steep compared to competitors.",
+        rating: 4,
+      },
+      {
+        title: "Battery Life Could Be Better",
+        comment:
+          "While the audio is amazing, I wish the battery life lasted longer, especially for long flights or workdays.",
+        rating: 3,
+      },
+      {
+        title: "Issues with Connectivity",
+        comment:
+          "Sometimes, the AirPods disconnect randomly, and I have to reconnect them manually. A bit frustrating for the price.",
+        rating: 2,
+      },
+      {
+        title: "Not Impressed",
+        comment:
+          "The noise cancellation is decent, but the sound quality doesn't justify the high price. Expected more from Apple.",
+        rating: 2,
+      },
+    ],
   },
   {
     name: "Samsung - Galaxy S24 Ultra 512GB (Unlocked) - Titanium Black",
@@ -123,6 +159,44 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61cv4U+K9gL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Outstanding Camera Quality",
+        comment:
+          "The camera is absolutely phenomenal, especially in low light. The zoom capabilities are unmatched. A photographer's dream!",
+        rating: 5,
+      },
+      {
+        title: "Blazing Fast Performance",
+        comment:
+          "With the latest chipset and 512GB storage, this phone handles everything with ease. No lag, even with heavy multitasking.",
+        rating: 5,
+      },
+      {
+        title: "Amazing Display, as Always",
+        comment:
+          "The 120Hz AMOLED screen is stunning, with vibrant colors and smooth performance. Watching videos on this is a treat!",
+        rating: 5,
+      },
+      {
+        title: "Solid Performance but Overpriced",
+        comment:
+          "The phone is great, but the price is too high compared to competitors offering similar features. Still, a solid choice for Galaxy fans.",
+        rating: 4,
+      },
+      {
+        title: "Bulky and Heavy",
+        comment:
+          "While the phone is powerful, it's a bit too bulky and heavy for comfortable one-handed use. Not ideal for smaller hands.",
+        rating: 3,
+      },
+      {
+        title: "Battery Drains Quickly",
+        comment:
+          "Expected better battery life from such a premium device. It struggles to last a full day with heavy use.",
+        rating: 2,
+      },
+    ],
   },
   {
     name: "ASUS TUF Gaming 27 2K HDR Gaming Monitor (VG27AQ) - QHD (2560 x 1440), 165Hz, 1ms, Extreme Low Motion Blur, Speaker, G-SYNC Compatible, Black",
@@ -163,6 +237,43 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71rxc69AZxL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Perfect for Competitive Gaming",
+        comment:
+          "The 144Hz refresh rate and low response time make this monitor a fantastic choice for FPS games. Smooth and responsive gameplay!",
+        rating: 5,
+      },
+      {
+        title: "Excellent Picture Quality",
+        comment:
+          "The colors are vibrant, and the contrast is sharp. Great for both gaming and watching movies. Truly a versatile monitor!",
+        rating: 5,
+      },
+      {
+        title: "Solid Build, Great Value",
+        comment:
+          "The monitor feels premium and sturdy. For the price, it’s one of the best 144Hz monitors available. Highly recommended for gamers on a budget.",
+        rating: 4,
+      },
+      {
+        title: "Good Performance but Limited Features",
+        comment:
+          "The performance is great for gaming, but I wish it had built-in speakers or USB ports for added convenience.",
+        rating: 4,
+      },
+      {
+        title: "Noticeable Backlight Bleed",
+        comment:
+          "The monitor works well for gaming, but there’s some noticeable backlight bleed in dark scenes, which can be distracting.",
+        rating: 3,
+      },
+      {
+        title: "Disappointing Quality Control",
+        comment: "Received a monitor with a few dead pixels and uneven brightness. Not what I expected from ASUS.",
+        rating: 2,
+      },
+    ],
   },
   {
     name: "Apple - MacBook Pro 14-inch Apple M4 Pro chip Built for Apple Intelligence - 24GB Memory - 512GB SSD - Space Black",
@@ -209,6 +320,44 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/612x5YczCzL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Exceptional Performance",
+        comment:
+          "The M-series chip delivers lightning-fast performance, even with heavy tasks like video editing and 3D rendering. Truly a powerhouse!",
+        rating: 5,
+      },
+      {
+        title: "Stunning Display",
+        comment:
+          "The Liquid Retina XDR display is gorgeous with deep blacks and vivid colors. Perfect for creative professionals who need color accuracy.",
+        rating: 5,
+      },
+      {
+        title: "Excellent Battery Life",
+        comment:
+          "Battery life is impressive, lasting a full workday with ease. A game-changer for people who work on the go.",
+        rating: 5,
+      },
+      {
+        title: "Pricey, but Worth It",
+        comment:
+          "It’s expensive, but the build quality, performance, and software integration make it worth the investment if you need a professional-grade laptop.",
+        rating: 4,
+      },
+      {
+        title: "Heavy for Its Size",
+        comment:
+          "While it’s compact, it feels heavier than expected, especially when carrying it around all day in a backpack.",
+        rating: 3,
+      },
+      {
+        title: "Limited Ports",
+        comment:
+          "Great laptop overall, but the limited number of USB-C ports is frustrating. You’ll likely need to buy extra adapters.",
+        rating: 3,
+      },
+    ],
   },
   {
     name: "Apple - iPhone 16 Pro Max 256GB - Apple Intelligence - Black Titanium",
@@ -258,6 +407,44 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/16533a99-f1ce-40d5-be47-ef1b95b5856a.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Incredible Camera System",
+        comment:
+          "The new camera upgrades are amazing, especially the zoom capabilities. Perfect for photography enthusiasts looking for pro-quality shots.",
+        rating: 5,
+      },
+      {
+        title: "Best iPhone Yet",
+        comment:
+          "The performance of the new chip is unmatched, and the battery easily lasts through an entire day of heavy use. Highly impressed!",
+        rating: 5,
+      },
+      {
+        title: "Gorgeous Design and Display",
+        comment:
+          "The build quality is premium, and the display is incredibly bright and smooth. Watching videos and gaming on this device is a joy.",
+        rating: 5,
+      },
+      {
+        title: "Great Performance but Overpriced",
+        comment:
+          "While the phone is amazing in every way, the price is steep, and I’m not sure the upgrades justify the cost for existing iPhone 15 users.",
+        rating: 4,
+      },
+      {
+        title: "Battery Life Needs Improvement",
+        comment:
+          "The battery life is decent but not as good as I’d hoped for a flagship device. Needs charging by the end of the day with heavy use.",
+        rating: 3,
+      },
+      {
+        title: "Connectivity Issues",
+        comment:
+          "The device occasionally has trouble staying connected to 5G networks. Hopefully, this can be resolved with a software update.",
+        rating: 2,
+      },
+    ],
   },
   {
     name: "Apple - 13-inch iPad Pro M4 chip Built for Apple Intelligence Wi-Fi 256GB with OLED - Space Black",
@@ -302,6 +489,44 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71XYcPrgeQL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Unmatched Performance",
+        comment:
+          "The M4 chip makes this iPad incredibly fast and responsive. Whether for gaming, video editing, or multitasking, it handles everything with ease.",
+        rating: 5,
+      },
+      {
+        title: "Perfect for Creative Professionals",
+        comment:
+          "The screen is gorgeous with rich colors and high brightness. Paired with the Apple Pencil, it’s a great tool for artists and designers.",
+        rating: 5,
+      },
+      {
+        title: "Battery Life is Impressive",
+        comment:
+          "I can easily get through a full day of heavy usage, including drawing, video streaming, and web browsing, without needing to charge.",
+        rating: 5,
+      },
+      {
+        title: "Very Expensive",
+        comment:
+          "While the performance and features are excellent, the price is a little high, especially when compared to some Windows alternatives.",
+        rating: 4,
+      },
+      {
+        title: "Limited Software Support for Productivity",
+        comment:
+          "Despite the powerful hardware, I feel the iPadOS is still limited for productivity tasks like full desktop software support. Great for media consumption, but lacks flexibility for work tasks.",
+        rating: 3,
+      },
+      {
+        title: "Great Device but Lacking Ports",
+        comment:
+          "It’s a great device overall, but I miss having more ports for better connectivity with external devices. You’ll need adapters for many peripherals.",
+        rating: 3,
+      },
+    ],
   },
   {
     name: "Sony - PlayStation 5 Pro Console - White",
@@ -353,7 +578,7 @@ const testProducts = [
     category: "Gaming",
     brand: "Sony",
     specs: {
-      processor: "AMD Ryzen 8-core",
+      processor: "AMD Ryzen 7 8-core",
       graphics: "AMD",
       memory: "16GB",
       storage: "2TB",
@@ -370,6 +595,44 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61wVCsSsy2L._SL1500_.jpg",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Next-Gen Gaming at Its Best",
+        comment:
+          "The PlayStation 5 Pro takes gaming to the next level with its enhanced graphics, 4K support, and lightning-fast loading times. A true next-gen experience.",
+        rating: 5,
+      },
+      {
+        title: "Stunning Visuals and Performance",
+        comment:
+          "The graphics are phenomenal, and the performance is incredibly smooth with 120Hz gameplay. Whether you're playing shooters or RPGs, everything looks stunning.",
+        rating: 5,
+      },
+      {
+        title: "Great Value for Hardcore Gamers",
+        comment:
+          "The PS5 Pro delivers fantastic value for those who want to experience high-quality gaming. The upgrade in power over the regular PS5 is definitely noticeable.",
+        rating: 5,
+      },
+      {
+        title: "Expensive, but Worth It",
+        comment:
+          "It’s a pricey console, but for the performance boost, it’s worth every penny. Perfect for those who want to future-proof their gaming setup.",
+        rating: 4,
+      },
+      {
+        title: "A Little Bulky",
+        comment:
+          "While the performance is great, the console is quite large and might not fit easily in your entertainment center. Make sure you have space!",
+        rating: 3,
+      },
+      {
+        title: "Limited Game Library for 120Hz Support",
+        comment:
+          "The PS5 Pro is amazing, but not all games support 120Hz yet. While the console is ready for future titles, current offerings are limited.",
+        rating: 3,
+      },
+    ],
   },
   {
     name: 'ASUS - ROG Zephyrus G16 16" OLED 240Hz Gaming Laptop - Intel Core Ultra 9 - 32GB LPDDR5X - NVIDIA GeForce RTX 4090 - 2TB SSD - Eclipse Gray',
@@ -415,6 +678,44 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6570/6570220cv15d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Unbeatable Gaming Performance",
+        comment:
+          "This laptop is an absolute powerhouse. The RTX 4090 and Core Ultra 9 chip make it run every game on max settings without breaking a sweat. A must-have for serious gamers.",
+        rating: 5,
+      },
+      {
+        title: "Stunning OLED Display",
+        comment:
+          "The 16-inch OLED display is vibrant and sharp, with deep blacks and true-to-life colors. The 240Hz refresh rate is perfect for fast-paced gaming.",
+        rating: 5,
+      },
+      {
+        title: "Top-Tier Build Quality",
+        comment:
+          "The Zephyrus G16 is built like a tank. It feels premium and durable, and the cooling system does a great job of keeping everything running cool even during intense gaming sessions.",
+        rating: 5,
+      },
+      {
+        title: "Incredible Performance but Expensive",
+        comment:
+          "While the performance is unmatched, the price tag is on the high side. If you're not a hardcore gamer or content creator, it may be overkill.",
+        rating: 4,
+      },
+      {
+        title: "Battery Life Could Be Better",
+        comment:
+          "With all this power, battery life takes a hit. You’ll need to keep it plugged in during heavy usage, but it’s expected from a high-performance gaming laptop.",
+        rating: 3,
+      },
+      {
+        title: "A Bit Heavy for a Laptop",
+        comment:
+          "The Zephyrus G16 is powerful, but it’s quite heavy compared to other gaming laptops. It’s not the most portable if you’re planning to carry it around often.",
+        rating: 3,
+      },
+    ],
   },
   {
     name: "Apple - 11-inch iPad Pro M4 chip Built for Apple Intelligence Wi-Fi 256GB with OLED - Space Black",
@@ -453,6 +754,44 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5495/5495362cv14d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Incredible Power and Performance",
+        comment:
+          "The M4 chip makes this iPad incredibly fast. Whether you're multitasking, gaming, or editing videos, it handles everything effortlessly.",
+        rating: 5,
+      },
+      {
+        title: "Stunning OLED Display",
+        comment:
+          "The OLED display is absolutely gorgeous. The colors are rich and vibrant, with deep blacks, making it a joy for media consumption and creative work.",
+        rating: 5,
+      },
+      {
+        title: "Perfect for Creative Professionals",
+        comment:
+          "The combination of the M4 chip and OLED screen makes this iPad ideal for artists and designers. Drawing with the Apple Pencil on this screen is a dream.",
+        rating: 5,
+      },
+      {
+        title: "Great for Productivity but Expensive",
+        comment:
+          "It’s great for productivity with the power of the M4 chip, but the price is steep, especially for those who don’t need all the performance it offers.",
+        rating: 4,
+      },
+      {
+        title: "Battery Life Could Be Better",
+        comment:
+          "Battery life is decent, but with heavy usage, especially with power-intensive tasks, you’ll need to charge it by the end of the day.",
+        rating: 3,
+      },
+      {
+        title: "No Significant Changes from Previous Models",
+        comment:
+          "While the M4 chip is impressive, there aren’t many other major changes compared to the previous model, making it hard to justify the upgrade for existing iPad Pro users.",
+        rating: 3,
+      },
+    ],
   },
   {
     name: 'HP - Victus 15.6" Full HD Gaming Laptop - AMD Ryzen 5-7535HS - 8GB DDR5 Memory - AMD Radeon RX 6550M - 512GB SSD - Mica Silver',
@@ -497,14 +836,46 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/bdb82854-72f8-435d-af6e-31e5bee92cb2.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    reviews: [
+      {
+        title: "Great Budget Gaming Laptop",
+        comment:
+          "For the price, this laptop is an excellent choice. It runs most modern games at medium settings with solid frame rates, and the performance is great for casual gaming.",
+        rating: 4,
+      },
+      {
+        title: "Smooth Full HD Experience",
+        comment:
+          'The 15.6" Full HD display looks fine, and the AMD Radeon RX 6550M delivers smooth gameplay for most games I play. A great value for entry-level gamers.',
+        rating: 3,
+      },
+      {
+        title: "Okay Performance for the Price",
+        comment:
+          "The Ryzen 5 processor and 8GB DDR5 RAM delivers solid overall performance for both gaming and productivity tasks. It’s perfect for users who want a balance between price and power.",
+        rating: 2,
+      },
+      {
+        title: "Decent Battery Life",
+        comment:
+          "Battery life is decent but not exceptional, especially during gaming sessions. Expect to keep it plugged in during more demanding tasks.",
+        rating: 2,
+      },
+      {
+        title: "Build Quality Could Be Better",
+        comment:
+          "While functional, the build quality feels a bit flimsy, especially the keyboard and the chassis. It’s not the most premium feeling laptop out there.",
+        rating: 2,
+      },
+      {
+        title: "Lacks Upgrade Options",
+        comment:
+          "It’s unfortunate that the RAM is not easily upgradeable, limiting future-proofing for users who may want to push the laptop further in the future.",
+        rating: 2,
+      },
+    ],
   },
 ];
-/*
-// Add random star ratings to each product
-testProducts.forEach((product) => {
-  product.rating = Math.floor(Math.random() * 5) + 1; // Generate random rating between 1 and 5
-});
-*/
 
 const test = async () => {
   try {
@@ -558,5 +929,6 @@ test();
       "",
     ],
     orderId: null,
+    reviews: [{title: "", comment: "", rating: 1}],
   },
 */

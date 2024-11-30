@@ -9,7 +9,16 @@ export type SpecState = {
   color?: string;
 };
 
+export type ReviewState = {
+  id: string;
+  title: string;
+  comment: string;
+  rating: number;
+  createdAt: Date;
+};
+
 export type ProductState = {
+  id: string;
   name: string;
   description: string;
   features: string[];
@@ -20,6 +29,7 @@ export type ProductState = {
   specs: SpecState;
   originalPrice: number;
   imageUrl: string[];
+  reviews: ReviewState[];
 };
 
 export type ProductResponse = {
