@@ -6,7 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link  from "next/link";
-import {signIn} from 'next-auth/react'
+import {getSession, signIn} from 'next-auth/react'
 import { useRouter } from "next/navigation";
 
 
@@ -40,7 +40,7 @@ const SignInForm = () => {
     if(signInData?.error){
         alert(signInData.error);
     }else{
-        router.push('/')
+        router.push('/');
     }
 
 

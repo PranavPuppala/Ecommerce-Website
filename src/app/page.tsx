@@ -1,10 +1,9 @@
 "use client";
 import { Banner } from "@/components/Banner";
 import { ProductCard } from "@/components/products/ProductCard";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
 
 type ProductState = {
   id: string;
@@ -19,15 +18,13 @@ type ProductResponse = {
   data: ProductState[];
 };
 
-export default async function Home() {
+export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  // const session = await getServerSession(authOptions);
-  // console.log(session)
   const fetchProducts = async () => {
     try {
       const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, {

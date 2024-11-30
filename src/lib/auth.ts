@@ -5,7 +5,6 @@ import { adapter } from "next/dist/server/web/adapter";
 import prisma from "@/db/db";
 import { compare } from "bcrypt";
 export const authOptions: NextAuthOptions = {
-
     adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
     session:{
@@ -51,7 +50,21 @@ export const authOptions: NextAuthOptions = {
 
       }
     })
-  ]
+  ],
+  callbacks:{
+    async jwt ({token, user}){
+        if(user){
+            return{
+                ...token,
+            }
+        }
+        return token
+    },
+    async session({session, user, token}){
+        return session
+    },
+
+  }
 
 }
 

@@ -1,5 +1,7 @@
+'use client';
 import Link from "next/link";
 import { HamburgerMenu } from "./HamburgerMenu";
+import { signOut, useSession } from "next-auth/react";
 
 const categories = [
   { name: "Top Deals", href: "/product/deals" },
@@ -8,6 +10,8 @@ const categories = [
 ];
 
 export default function Header() {
+  const{data: session} = useSession();
+
   return (
     <header className="sticky top-0 z-50 w-full bg-gray-800 text-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -26,8 +30,17 @@ export default function Header() {
               {category.name}
             </Link>
           ))}
-
-          <Link href="/user">
+          {session ? (
+            <button
+              onClick={() => signOut({
+                callbackUrl: "/" //go back to sign in page
+              })}
+              className="text-lg text-white-500 hover:text-red-700"
+            >
+              Sign Out
+            </button>
+          ) : (
+          <Link href="/api/auth/signin">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -43,6 +56,7 @@ export default function Header() {
               />
             </svg>
           </Link>
+          )}
           <Link href="/cart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
