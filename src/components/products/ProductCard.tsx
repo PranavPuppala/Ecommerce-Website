@@ -1,20 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-type ProductProps = {
+interface ProductCardProps {
   id: string;
   name: string;
-  description?: string;
   price: number;
   imageUrl: string;
-  href?: string;
-};
+  description?: string;
+}
 
-export const ProductCard = ({ id, name, description, price, imageUrl }: ProductProps) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, imageUrl, description }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
-      <Link href={"/product/[id]"} as={`/product/${encodeURIComponent(id)}`}>
-        <div className="relative w-full h-60 flex justify-center items-center">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <Link href={`/product/${id}`}>
+        <div className="relative h-48">
           <Image
             src={imageUrl}
             alt={name}
@@ -26,10 +27,8 @@ export const ProductCard = ({ id, name, description, price, imageUrl }: ProductP
         </div>
         <div className="p-4">
           <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
-          <p className="text-sm text-gray-500">{description}</p>
-          <div className="mt-3 flex justify-between items-center">
-            <span className="text-xl font-bold text-gray-900">${price}</span>
-          </div>
+          {description && <p className="text-sm text-gray-600 mt-1">{description}</p>}
+          <p className="text-xl font-bold text-gray-900 mt-2">${price.toFixed(2)}</p>
         </div>
       </Link>
     </div>

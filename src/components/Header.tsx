@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import { HamburgerMenu } from "./HamburgerMenu";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const categories = [
   { name: "Top Deals", href: "/product/deals" },
@@ -8,6 +11,16 @@ const categories = [
 ];
 
 export default function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-gray-800 text-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -18,6 +31,24 @@ export default function Header() {
           </Link>
           <HamburgerMenu />
         </div>
+
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} className="flex-grow mx-4 hidden md:block">
+          <div className="relative">
+            <input
+              type="search"
+              placeholder="Search products..."
+              className="w-full px-4 py-2 text-gray-900 bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
+              <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+          </div>
+        </form>
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-8">
