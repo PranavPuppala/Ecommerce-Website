@@ -1,4 +1,4 @@
-"use client"; // Add this at the top of the file
+"use client";
 
 import React, { useState } from "react";
 
@@ -51,10 +51,7 @@ const UserSignIn = () => {
           />
         </div>
 
-        <button
-          onClick={handleSubmit}
-          className="w-full p-3 bg-gray-800 text-white rounded-lg hover:bg-blue-500"
-        >
+        <button onClick={handleSubmit} className="w-full p-3 bg-gray-800 text-white rounded-lg hover:bg-blue-500">
           Sign Up
         </button>
 

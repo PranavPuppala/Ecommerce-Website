@@ -4,7 +4,6 @@ import { ProductCard } from "@/components/products/ProductCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 type ProductState = {
   id: string;
   name: string;
