@@ -3,6 +3,7 @@ import Link from "next/link";
 import { HamburgerMenu } from "./HamburgerMenu";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 
 const categories = [
   { name: "Top Deals", href: "/product/deals" },
@@ -11,6 +12,8 @@ const categories = [
 ];
 
 export default function Header() {
+  const { data: session } = useSession();
+
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
@@ -68,23 +71,35 @@ export default function Header() {
               {category.name}
             </Link>
           ))}
-
-          <Link href="/user">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-7 h-7"
+          {session ? (
+            <button
+              onClick={() =>
+                signOut({
+                  callbackUrl: "/", //go back to sign in page
+                })
+              }
+              className="text-lg text-white-500 hover:text-red-700"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-              />
-            </svg>
-          </Link>
+              Sign Out
+            </button>
+          ) : (
+            <Link href="/api/auth/signin">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-7 h-7"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            </Link>
+          )}
           <Link href="/cart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
