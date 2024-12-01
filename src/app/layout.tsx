@@ -31,12 +31,13 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen overflow-y-auto`}>
         <Provider>
-        <CartProvider>
+          <CartProvider>
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+          </CartProvider>
         </Provider>
-        </CartProvider>
+        
       </body>
     </html>
   );
