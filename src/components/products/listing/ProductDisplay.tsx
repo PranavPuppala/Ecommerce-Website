@@ -97,6 +97,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
           brand={product.brand}
           specs={product.specs}
           reviews={product.reviews}
+          product={product}
         />
       </div>
       <div className="mt-20">
@@ -128,7 +129,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
 
         <DescriptionPanel description={product.description} features={product.features} specs={product.specs} />
       </div>
-      <div className="mt-10">
+      <div className="mt-10" id="reviews">
         <span className="text-lg font-semibold">Reviews</span>
         <ReviewsPanel reviews={product.reviews} />
       </div>

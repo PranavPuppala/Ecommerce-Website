@@ -1,4 +1,4 @@
-import { ProductDisplay } from "@/components/products/page/ProductDisplay";
+import { ProductDisplay } from "@/components/products/listing/ProductDisplay";
 
 export default async function Products({ params }: { params: { id: string } }) {
   const { id } = await params;

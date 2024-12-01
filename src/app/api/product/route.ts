@@ -27,6 +27,7 @@ export async function GET() {
     const data = await prisma.product.findMany({
       include: {
         specs: true,
+        reviews: true,
       },
     });
 

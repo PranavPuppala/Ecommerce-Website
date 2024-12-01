@@ -1,16 +1,10 @@
 "use client";
+import { AdPanel } from "@/components/AdPanel";
 import { Banner } from "@/components/Banner";
+import { ProductState, ReviewState } from "@/components/products/listing/states";
 import { ProductCard } from "@/components/products/ProductCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-type ProductState = {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string[];
-};
 
 type ProductResponse = {
   message: string;
@@ -48,6 +42,9 @@ export default function Home() {
   return (
     <div className="px-4 my-8">
       <Banner />
+
+      {/*<AdPanel />*/}
+
       {/* New Arrivals*/}
       <div className="text-center my-8">
         <h2 className="text-3xl font-semibold text-gray-800">New Arrivals</h2>
@@ -55,15 +52,9 @@ export default function Home() {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 px-48 py-16">
         {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            imageUrl={product.imageUrl[0]}
-          />
+          <ProductCard key={index} product={product} />
         ))}
       </div>
     </div>

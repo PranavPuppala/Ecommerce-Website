@@ -64,7 +64,7 @@ const HighlightProcessor = ({ processor, category }: { processor: string; catego
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold whitespace-nowrap text-sm">{processor}</span>
+        <span className="font-semibold whitespace-nowrap text-sm truncate">{processor}</span>
         <span className="text-xs">Processor Model</span>
         <div className="flex justify-evenly items-center">
           <ProcessorIcons processor={processor} category={category} />

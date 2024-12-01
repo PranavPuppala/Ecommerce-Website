@@ -1,5 +1,5 @@
 import React from "react";
-import { ReviewState } from "../products/page/states";
+import { ReviewState } from "../products/listing/states";
 import { ReviewBlock } from "./ReviewBlock";
 
 export const ReviewsPanel = ({ reviews }: { reviews: ReviewState[] }) => {

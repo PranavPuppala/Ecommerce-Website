@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductState, SpecState } from "@/components/products/page/states";
+import { ProductState } from "@/components/products/listing/states";
 import { ProductCard } from "@/components/products/ProductCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -26,7 +26,7 @@ export default function CategoryProducts({ category }: { category: string }) {
 
       const response = (await result.json()) as ProductResponse;
 
-      const products = response.data.filter((product: any) => product.category === category);
+      const products = response.data.filter((product: ProductState) => product.category === category);
       setProducts(products);
 
       if (!result.ok) {
@@ -40,21 +40,15 @@ export default function CategoryProducts({ category }: { category: string }) {
   };
 
   return (
-    <div className="px-4 my-8">
-      <div className="text-center my-8">
+    <div className="">
+      <div className="text-center mt-8">
         <h2 className="text-3xl font-semibold text-gray-800">{category}</h2>
         <p className="text-lg text-gray-500">Explore our selection of devices</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-16">
         {products.map((product) => (
-          <ProductCard
-            key={product.name}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            imageUrl={product.imageUrl[0]}
-          />
+          <ProductCard key={product.name} product={product} />
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { ReviewState } from "../products/page/states";
+import { ReviewState } from "../products/listing/states";
 import { Rating } from "../rating/Rating";
 
 const formatDate = (date: Date) => {

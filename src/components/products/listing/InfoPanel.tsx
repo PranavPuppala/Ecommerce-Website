@@ -2,7 +2,9 @@ import Link from "next/link";
 import { Rating } from "../../rating/Rating";
 import { CardboardBox, CartFill } from "./icons/ProductIcons";
 import { handleShippingDate } from "./ShippingDate";
-import { ReviewState, SpecState } from "./states";
+import { ProductState, ReviewState, SpecState } from "./states";
+import { useCart } from "@/context/CartContext";
+import { useRef } from "react";
 
 export const InfoPanel = ({
   name,
@@ -12,6 +14,7 @@ export const InfoPanel = ({
   brand,
   specs,
   reviews,
+  product,
 }: {
   name: string;
   price: number;
@@ -20,33 +23,41 @@ export const InfoPanel = ({
   brand: string;
   specs: SpecState;
   reviews: ReviewState[];
+  product: ProductState;
 }) => {
+  const { addToCart } = useCart();
   const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
+
+  const shippingDateRef = useRef<string>("");
+
+  if (!shippingDateRef.current) {
+    shippingDateRef.current = handleShippingDate();
+  }
 
   return (
     <div className="flex flex-col w-1/3 min-w-[300px]">
-      <h1 className="text-sm">
-        <Link href="/" className="text-blue-600 hover:underline">
+      <span className="text-sm">
+        <Link href={`/search?q=${brand}`} className="text-blue-600 hover:underline">
           <span className="font-normal"> {brand}</span>
         </Link>
-      </h1>
+      </span>
       <h1 className="text-2xl font-semibold text-wrap">{name}</h1>
       <div className="flex flex-row gap-x-3 items-center my-6">
         <Rating ratingInPercent={averageRating * 20} iconSize="l" showOutOf={true} enableUserInteraction={false} />
         <h1 className="text-sm">
-          <Link href="/" className="text-blue-600 font-semibold hover:underline">
+          <Link href="#reviews" className="text-blue-600 font-semibold hover:underline">
             {averageRating.toFixed(1)} <span className="font-normal"> {`(${reviews.length} reviews)`}</span>
           </Link>
         </h1>
       </div>
       <div className="flex flex-col border-y border-gray-300">
-        <span className="text-3xl font-semibold">${price}</span>
+        <span className="text-3xl font-semibold">${price.toFixed(2)}</span>
         {price < originalPrice ? (
           <div className="flex flex-col">
             <span className="bg-red-500 inline-block text-white font-semibold max-w-fit px-1">
               Save ${(originalPrice - price).toFixed(2)}
             </span>
-            <span className="text-sm">Was ${originalPrice}</span>
+            <span className="text-sm">Was ${originalPrice.toFixed(2)}</span>
           </div>
         ) : (
           <span></span>
@@ -101,7 +112,7 @@ export const InfoPanel = ({
             {quantity > 25 ? (
               <span className="text-lime-700">IN STOCK</span>
             ) : quantity >= 1 ? (
-              <span className="text-yellow-500">LOW IN STOCK, ONLY {quantity} REMAINING</span>
+              <span className="text-yellow-500">LOW IN STOCK</span>
             ) : (
               <span className="text-red-500">0 IN STOCK</span>
             )}
@@ -114,21 +125,24 @@ export const InfoPanel = ({
           </div>
           <div>
             <span>Get it by </span>
-            <span className="font-semibold">{handleShippingDate()}</span>
+            <span className="font-semibold">{shippingDateRef.current}</span>
           </div>
         </div>
 
         <div className="flex gap-x-4 my-1">
           <button
+            type="button"
             className="bg-blue-600 text-white font-semibold w-3/4 py-2 px-4 gap-x-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center"
             onClick={() => {
-              alert("placeholder");
+              addToCart(product);
+              alert("Added item to cart");
             }}
           >
             <CartFill />
             <span>Add to Cart</span>
           </button>
           <button
+            type="button"
             className="border border-gray-300 text-black font-semibold w-1/4 py-2 px-4 rounded-md flex items-center justify-center gap-x-2 hover:border-gray-400"
             onClick={() => {
               alert("placeholder");

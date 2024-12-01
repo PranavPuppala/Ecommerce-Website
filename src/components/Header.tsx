@@ -23,9 +23,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-gray-800 text-white shadow-md">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="mx-auto px-8 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center text-2xl font-bold -ml-8">
+        <div className="flex items-center text-2xl font-bold">
           <Link href="/" className="mr-8">
             Commerce Electronics
           </Link>

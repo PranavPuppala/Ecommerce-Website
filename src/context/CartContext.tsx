@@ -1,42 +1,38 @@
 "use client";
 
+import { ProductState } from "@/components/products/listing/states";
 import React, { createContext, useContext, useState, useMemo } from "react";
 
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
 interface CartContextType {
-  cartItems: CartItem[];
-  addToCart: (item: CartItem) => void;
-  removeFromCart: (id: number) => void;
-  updateQuantity: (id: number, quantity: number) => void;
+  cartItems: ProductState[];
+  addToCart: (item: ProductState) => void;
+  removeFromCart: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
   totalCost: number;
+  totalOriginalCost: number;
+  totalSavings: number;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<ProductState[]>([]);
 
-  const addToCart = (item: CartItem) => {
+  const addToCart = (item: ProductState) => {
     setCartItems((prev) => {
       const existingItem = prev.find((i) => i.id === item.id);
       if (existingItem) {
-        return prev.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i));
+        return prev.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i));
       }
-      return [...prev, item];
+      return [...prev, { ...item, quantity: 1 }];
     });
   };
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (id: string) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const updateQuantity = (id: number, quantity: number) => {
+  const updateQuantity = (id: string, quantity: number) => {
     setCartItems((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity: Math.max(1, Math.min(quantity, 99)) } : item))
     );
@@ -46,8 +42,18 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }, [cartItems]);
 
+  const totalOriginalCost = useMemo(() => {
+    return cartItems.reduce((total, item) => total + item.originalPrice * item.quantity, 0);
+  }, [cartItems]);
+
+  const totalSavings = useMemo(() => {
+    return cartItems.reduce((total, item) => total + (item.originalPrice - item.price) * item.quantity, 0);
+  }, [cartItems]);
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity, totalCost }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity, totalCost, totalOriginalCost, totalSavings }}
+    >
       {children}
     </CartContext.Provider>
   );
