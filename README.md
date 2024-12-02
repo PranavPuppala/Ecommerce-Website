@@ -35,8 +35,13 @@ npx prisma migrate dev
 # Step 5: now you can run the application (Make sure you are back to the base directory /Group09EcommerceWebsite/
 npm run dev
 
+
+
+# Step 6:
+# First sign up on the website, then one a user profile is successfully created,
+run:   npx prisma studio in terminal, in the opened studio, change the user id to "d446b038-db54-4dcd-b620-29a256f9d0d3"
 # then for test product info to be put into database,
-cd src/utils
+make sure npm run dev is running, open second terminal cd src/utils
 # then run
 node test.js
 ```
