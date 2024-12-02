@@ -1,3 +1,8 @@
+function getRandomDate() {
+  const startDate = new Date("2023-01-01");
+  const endDate = new Date(); // Current date
+  return new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
+}
 const testProducts = [
   {
     name: "Apple AirPods Pro 2 Wireless Earbuds",
@@ -58,7 +63,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/81Kd2CPdWBL._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/61n7MpBGeBL._AC_SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -66,70 +71,82 @@ const testProducts = [
         comment:
           "The audio quality is unmatched, and the noise cancellation is top-notch. Perfect for commuting or working in noisy environments.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Super Comfortable Fit",
         comment: "These earbuds fit perfectly and stay in place even during workouts. Comfort level is incredible!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Good, but Pricey",
         comment: "The sound quality and features are excellent, but the price is a bit steep compared to competitors.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Life Could Be Better",
         comment:
           "While the audio is amazing, I wish the battery life lasted longer, especially for long flights or workdays.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Issues with Connectivity",
         comment:
           "Sometimes, the AirPods disconnect randomly, and I have to reconnect them manually. A bit frustrating for the price.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
       {
         title: "Not Impressed",
         comment:
           "The noise cancellation is decent, but the sound quality doesn't justify the high price. Expected more from Apple.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
       {
         title: "Perfect for the Gym!",
         comment:
           "I love using these AirPods Pro 2 during my workouts. They stay in place, and the noise cancellation helps me focus without distractions.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great for Traveling",
         comment:
           "I travel frequently and these earbuds are a lifesaver. The noise cancellation works wonders on flights, and the case makes it easy to keep them safe while on the go.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Best Sound I’ve Heard!",
         comment:
           "The sound quality of these AirPods is amazing. I never realized how much I was missing until I tried these. The bass is deep, and the clarity is crystal clear.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Disappointing Battery Life",
         comment:
           "While the sound quality is fantastic, the battery life doesn't last long enough for me. I need a bit more longevity out of the battery for long trips.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great Value for the Price",
         comment:
           "After trying a few different brands, I find the AirPods Pro 2 to be the best value. They offer excellent sound, good connectivity, and reliable performance for the price.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Comfortable but Pricey",
         comment:
           "The comfort level is top-notch, and the sound quality is great, but I still think they’re a little overpriced. If you can afford them, they’re worth it.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -195,7 +212,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71FPf9lJ9YL._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/61cv4U+K9gL._AC_SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -203,36 +220,42 @@ const testProducts = [
         comment:
           "The camera is absolutely phenomenal, especially in low light. The zoom capabilities are unmatched. A photographer's dream!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Blazing Fast Performance",
         comment:
           "With the latest chipset and 512GB storage, this phone handles everything with ease. No lag, even with heavy multitasking.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Amazing Display, as Always",
         comment:
           "The 120Hz AMOLED screen is stunning, with vibrant colors and smooth performance. Watching videos on this is a treat!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Solid Performance but Overpriced",
         comment:
           "The phone is great, but the price is too high compared to competitors offering similar features. Still, a solid choice for Galaxy fans.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Bulky and Heavy",
         comment:
           "While the phone is powerful, it's a bit too bulky and heavy for comfortable one-handed use. Not ideal for smaller hands.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Drains Quickly",
         comment:
           "Expected better battery life from such a premium device. It struggles to last a full day with heavy use.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -274,7 +297,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71MIUIR55cL._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/71rxc69AZxL._AC_SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -282,35 +305,41 @@ const testProducts = [
         comment:
           "The 144Hz refresh rate and low response time make this monitor a fantastic choice for FPS games. Smooth and responsive gameplay!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Excellent Picture Quality",
         comment:
           "The colors are vibrant, and the contrast is sharp. Great for both gaming and watching movies. Truly a versatile monitor!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Solid Build, Great Value",
         comment:
           "The monitor feels premium and sturdy. For the price, it’s one of the best 144Hz monitors available. Highly recommended for gamers on a budget.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Good Performance but Limited Features",
         comment:
           "The performance is great for gaming, but I wish it had built-in speakers or USB ports for added convenience.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Noticeable Backlight Bleed",
         comment:
           "The monitor works well for gaming, but there’s some noticeable backlight bleed in dark scenes, which can be distracting.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Disappointing Quality Control",
         comment: "Received a monitor with a few dead pixels and uneven brightness. Not what I expected from ASUS.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -358,7 +387,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61CRbTpxNwL._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/612x5YczCzL._AC_SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -366,36 +395,42 @@ const testProducts = [
         comment:
           "The M-series chip delivers lightning-fast performance, even with heavy tasks like video editing and 3D rendering. Truly a powerhouse!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Stunning Display",
         comment:
           "The Liquid Retina XDR display is gorgeous with deep blacks and vivid colors. Perfect for creative professionals who need color accuracy.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Excellent Battery Life",
         comment:
           "Battery life is impressive, lasting a full workday with ease. A game-changer for people who work on the go.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Pricey, but Worth It",
         comment:
           "It’s expensive, but the build quality, performance, and software integration make it worth the investment if you need a professional-grade laptop.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Heavy for Its Size",
         comment:
           "While it’s compact, it feels heavier than expected, especially when carrying it around all day in a backpack.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Limited Ports",
         comment:
           "Great laptop overall, but the limited number of USB-C ports is frustrating. You’ll likely need to buy extra adapters.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -446,7 +481,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/7b8349ea-c417-492a-978b-9d585005d63b.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/16533a99-f1ce-40d5-be47-ef1b95b5856a.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -454,36 +489,42 @@ const testProducts = [
         comment:
           "The new camera upgrades are amazing, especially the zoom capabilities. Perfect for photography enthusiasts looking for pro-quality shots.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Best iPhone Yet",
         comment:
           "The performance of the new chip is unmatched, and the battery easily lasts through an entire day of heavy use. Highly impressed!",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Gorgeous Design and Display",
         comment:
           "The build quality is premium, and the display is incredibly bright and smooth. Watching videos and gaming on this device is a joy.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great Performance but Overpriced",
         comment:
           "While the phone is amazing in every way, the price is steep, and I’m not sure the upgrades justify the cost for existing iPhone 15 users.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Life Needs Improvement",
         comment:
           "The battery life is decent but not as good as I’d hoped for a flagship device. Needs charging by the end of the day with heavy use.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Connectivity Issues",
         comment:
           "The device occasionally has trouble staying connected to 5G networks. Hopefully, this can be resolved with a software update.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -529,7 +570,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/812UO7Ja2nL._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/71XYcPrgeQL._AC_SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -537,36 +578,42 @@ const testProducts = [
         comment:
           "The M4 chip makes this iPad incredibly fast and responsive. Whether for gaming, video editing, or multitasking, it handles everything with ease.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Perfect for Creative Professionals",
         comment:
           "The screen is gorgeous with rich colors and high brightness. Paired with the Apple Pencil, it’s a great tool for artists and designers.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Life is Impressive",
         comment:
           "I can easily get through a full day of heavy usage, including drawing, video streaming, and web browsing, without needing to charge.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Very Expensive",
         comment:
           "While the performance and features are excellent, the price is a little high, especially when compared to some Windows alternatives.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Limited Software Support for Productivity",
         comment:
           "Despite the powerful hardware, I feel the iPadOS is still limited for productivity tasks like full desktop software support. Great for media consumption, but lacks flexibility for work tasks.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great Device but Lacking Ports",
         comment:
           "It’s a great device overall, but I miss having more ports for better connectivity with external devices. You’ll need adapters for many peripherals.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -636,7 +683,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/6101Kxr2fXL._SL1500_.jpg",
       "https://m.media-amazon.com/images/I/61wVCsSsy2L._SL1500_.jpg",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -644,36 +691,42 @@ const testProducts = [
         comment:
           "The PlayStation 5 Pro takes gaming to the next level with its enhanced graphics, 4K support, and lightning-fast loading times. A true next-gen experience.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Stunning Visuals and Performance",
         comment:
           "The graphics are phenomenal, and the performance is incredibly smooth with 120Hz gameplay. Whether you're playing shooters or RPGs, everything looks stunning.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great Value for Hardcore Gamers",
         comment:
           "The PS5 Pro delivers fantastic value for those who want to experience high-quality gaming. The upgrade in power over the regular PS5 is definitely noticeable.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Expensive, but Worth It",
         comment:
           "It’s a pricey console, but for the performance boost, it’s worth every penny. Perfect for those who want to future-proof their gaming setup.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "A Little Bulky",
         comment:
           "While the performance is great, the console is quite large and might not fit easily in your entertainment center. Make sure you have space!",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Limited Game Library for 120Hz Support",
         comment:
           "The PS5 Pro is amazing, but not all games support 120Hz yet. While the console is ready for future titles, current offerings are limited.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -720,7 +773,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6570/6570220cv13d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6570/6570220cv15d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -728,36 +781,42 @@ const testProducts = [
         comment:
           "This laptop is an absolute powerhouse. The RTX 4090 and Core Ultra 9 chip make it run every game on max settings without breaking a sweat. A must-have for serious gamers.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Stunning OLED Display",
         comment:
           "The 16-inch OLED display is vibrant and sharp, with deep blacks and true-to-life colors. The 240Hz refresh rate is perfect for fast-paced gaming.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Top-Tier Build Quality",
         comment:
           "The Zephyrus G16 is built like a tank. It feels premium and durable, and the cooling system does a great job of keeping everything running cool even during intense gaming sessions.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Incredible Performance but Expensive",
         comment:
           "While the performance is unmatched, the price tag is on the high side. If you're not a hardcore gamer or content creator, it may be overkill.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Life Could Be Better",
         comment:
           "With all this power, battery life takes a hit. You’ll need to keep it plugged in during heavy usage, but it’s expected from a high-performance gaming laptop.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "A Bit Heavy for a Laptop",
         comment:
           "The Zephyrus G16 is powerful, but it’s quite heavy compared to other gaming laptops. It’s not the most portable if you’re planning to carry it around often.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -797,7 +856,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5495/5495362cv19d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5495/5495362cv14d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -805,36 +864,42 @@ const testProducts = [
         comment:
           "The M4 chip makes this iPad incredibly fast. Whether you're multitasking, gaming, or editing videos, it handles everything effortlessly.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Stunning OLED Display",
         comment:
           "The OLED display is absolutely gorgeous. The colors are rich and vibrant, with deep blacks, making it a joy for media consumption and creative work.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Perfect for Creative Professionals",
         comment:
           "The combination of the M4 chip and OLED screen makes this iPad ideal for artists and designers. Drawing with the Apple Pencil on this screen is a dream.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great for Productivity but Expensive",
         comment:
           "It’s great for productivity with the power of the M4 chip, but the price is steep, especially for those who don’t need all the performance it offers.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Battery Life Could Be Better",
         comment:
           "Battery life is decent, but with heavy usage, especially with power-intensive tasks, you’ll need to charge it by the end of the day.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "No Significant Changes from Previous Models",
         comment:
           "While the M4 chip is impressive, there aren’t many other major changes compared to the previous model, making it hard to justify the upgrade for existing iPad Pro users.",
         rating: 3,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -880,7 +945,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3bffcd52-5c03-45d8-a23a-c0ece676b817.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/bdb82854-72f8-435d-af6e-31e5bee92cb2.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -888,36 +953,42 @@ const testProducts = [
         comment:
           "For the price, this laptop is an excellent choice. It runs most modern games at medium settings with solid frame rates, and the performance is great for casual gaming.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Smooth Full HD Experience",
         comment:
           'The 15.6" Full HD display looks fine, and the AMD Radeon RX 6550M delivers smooth gameplay for most games I play. A great value for entry-level gamers.',
         rating: 3,
+        createdAt: getRandomDate(),
       },
       {
         title: "Okay Performance for the Price",
         comment:
           "The Ryzen 5 processor and 8GB DDR5 RAM delivers solid overall performance for both gaming and productivity tasks. It’s perfect for users who want a balance between price and power.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
       {
         title: "Decent Battery Life",
         comment:
           "Battery life is decent but not exceptional, especially during gaming sessions. Expect to keep it plugged in during more demanding tasks.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
       {
         title: "Build Quality Could Be Better",
         comment:
           "While functional, the build quality feels a bit flimsy, especially the keyboard and the chassis. It’s not the most premium feeling laptop out there.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
       {
         title: "Lacks Upgrade Options",
         comment:
           "It’s unfortunate that the RAM is not easily upgradeable, limiting future-proofing for users who may want to push the laptop further in the future.",
         rating: 2,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -954,7 +1025,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/12ddc573-6718-49d0-b4c8-536ba44a0e81.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6b0b41e3-367d-4de1-9bc2-07dc5c11e36b.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
@@ -962,72 +1033,84 @@ const testProducts = [
         comment:
           "This computer is super fast! I can play all my games on the highest settings and it never lags. The RTX 4070 SUPER is crazy good.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Cool and Quiet",
         comment:
           "It doesn’t make much noise at all, even when I'm gaming for hours. Plus, it stays cool the whole time, so no worries about overheating.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Looks Great",
         comment:
           "The design is clean and simple. It fits perfectly in my room, and it’s not too big either, which I like.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Plays Everything Smoothly",
         comment:
           "All my games look amazing and run smoothly. I can’t believe how good the graphics are. Definitely recommend it for any gamer.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Super Easy to Set Up",
         comment:
           "Setting up the Alienware was easy, and the software that comes with it makes it even easier to change settings. Great for beginners!",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Worth the Price",
         comment:
           "It’s a little pricey, but totally worth it if you want a high-end gaming desktop. The performance is unbeatable.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Best Gaming Rig",
         comment:
           "I’ve tried a lot of desktops, but this one blows them all away. The RTX 4070 SUPER makes everything look so realistic. Love it.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Super Quiet",
         comment:
           "This thing is almost silent. Even when it’s running really hard, you can barely hear it. Perfect for gaming marathons.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Great for AAA Games",
         comment:
           "I can play all the newest games with no problems. No lag, no freezing. It’s like having a pro gaming setup.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "Could Use More Storage",
         comment:
           "It’s fast with the 1TB SSD, but I wish there was more space for all my games. Definitely need an extra hard drive.",
         rating: 4,
+        createdAt: getRandomDate(),
       },
       {
         title: "Incredible Graphics",
         comment:
           "The graphics on this thing are insane. The RTX 4070 SUPER really makes everything look next-level, especially when I play games like Fortnite and Call of Duty.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
       {
         title: "A Beast of a PC",
         comment:
           "This is one seriously powerful computer. It can handle everything I throw at it, from gaming to video editing.",
         rating: 5,
+        createdAt: getRandomDate(),
       },
     ],
   },
@@ -1071,9 +1154,9 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/9bc1452d-b13d-43a6-b05e-4673b35733b9.jpg;maxHeight=2000;maxWidth=2000;format=webp",
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/ab52504a-fb54-4a35-b97d-edba8ec22a14.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
-    orderId: null,
+
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
-    reviews: [{ title: "cool", comment: "its, cool. i guess", rating: 5 }],
+    reviews: [{ title: "cool", comment: "its, cool. i guess", rating: 5, createdAt: getRandomDate() }],
   },
 ];
 
@@ -1128,7 +1211,7 @@ test();
       "",
       "",
     ],
-    orderId: null,
+    
     userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [{title: "", comment: "", rating: 1}],
   },
