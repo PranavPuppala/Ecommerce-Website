@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReviewState } from "../products/listing/states";
 import { ReviewBlock } from "./ReviewBlock";
+import AddReview from "../AddReview";
 
-export const ReviewsPanel = ({ reviews }: { reviews: ReviewState[] }) => {
-  const ratingCount = reviews.reduce<{ [key: number]: number }>((acc, review) => {
+export const ReviewsPanel = ({
+  reviews,
+  productId,
+  userId,
+}: {
+  reviews: ReviewState[];
+  productId: string;
+  userId: string;
+}) => {
+  const [showAddReview, setShowAddReview] = useState(false);
+  const [reviewList, setReviewList] = useState<ReviewState[]>(reviews);
+
+  const ratingCount = reviewList.reduce<{ [key: number]: number }>((acc, review) => {
     if (review.rating >= 1 && review.rating <= 5) {
       acc[review.rating] = (acc[review.rating] || 0) + 1;
     }
@@ -21,6 +33,12 @@ export const ReviewsPanel = ({ reviews }: { reviews: ReviewState[] }) => {
 
   const finalRatingCount: { [key: number]: number } = { ...defaultRatingCount, ...ratingCount };
   const totalReviews = Object.values(finalRatingCount).reduce((sum, count) => sum + count, 0);
+
+  const handleAddReview = (review: { id: string; title: string; comment: string; rating: number }) => {
+    const newReview: ReviewState = { ...review, createdAt: new Date() }; // Add createdAt
+    setReviewList([newReview, ...reviewList]);
+    setShowAddReview(false);
+  };
 
   return (
     <div>
@@ -50,21 +68,32 @@ export const ReviewsPanel = ({ reviews }: { reviews: ReviewState[] }) => {
           </div>
         ))}
       </div>
-      {reviews.map((review) => (
-        <div key={review.id} className="">
+      {reviewList.map((review) => (
+        <div key={review.id}>
           <ReviewBlock review={review} />
         </div>
       ))}
       <div className="flex flex-row my-8">
         <button
           className="bg-blue-600 text-white font-semibold w-1/7 py-2 px-4 gap-x-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center"
-          onClick={() => {
-            alert("placeholder");
-          }}
+          onClick={() => setShowAddReview(true)}
         >
           <span>Add a Review</span>
         </button>
       </div>
+      {showAddReview && (
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded shadow-lg max-w-lg w-full">
+            <AddReview productId={productId} onSubmit={handleAddReview} userId={userId} />
+            <button
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              onClick={() => setShowAddReview(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

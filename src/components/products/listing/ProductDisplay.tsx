@@ -7,9 +7,12 @@ import { ProductResponse, ProductState } from "./states";
 import { DescriptionPanel } from "./DescriptionPanel";
 import { HighlightsPanel } from "./Highlights";
 import { ReviewsPanel } from "@/components/reviews/ReviewsPanel";
+import { useSession } from "next-auth/react";
 
 export const ProductDisplay = ({ id }: { id: string }) => {
   const router = useRouter();
+
+  const { data: session } = useSession();
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [product, setProduct] = useState<ProductState>({
@@ -142,7 +145,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
       </div>
       <div className="mt-10" id="reviews">
         <span className="text-lg font-semibold">Reviews</span>
-        <ReviewsPanel reviews={product.reviews} />
+        <ReviewsPanel reviews={product.reviews} productId={product.id} userId={session?.user.id} />
       </div>
     </div>
   );
