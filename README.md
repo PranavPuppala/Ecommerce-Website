@@ -39,9 +39,12 @@ npm run dev
 
 # Step 6:
 # First sign up on the website, then one a user profile is successfully created,
-run:   npx prisma studio in terminal, in the opened studio, change the user id to "d446b038-db54-4dcd-b620-29a256f9d0d3"
+# run:
+npx prisma studio
+# in the opened studio, change the user id to "d446b038-db54-4dcd-b620-29a256f9d0d3"
 # then for test product info to be put into database,
-make sure npm run dev is running, open second terminal cd src/utils
+# make sure npm run dev is running, open second terminal
+cd src/utils
 # then run
 node test.js
 ```
