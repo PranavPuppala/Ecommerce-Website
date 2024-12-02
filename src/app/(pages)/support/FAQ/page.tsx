@@ -17,7 +17,7 @@ const FAQs = [
   },
   {
     question: "Do you ship internationally?",
-    answer: "USA only.",
+    answer: "USA only",
   },
   {
     question: "How can I contact customer support?",

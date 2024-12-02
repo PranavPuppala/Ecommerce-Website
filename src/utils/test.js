@@ -38,7 +38,7 @@ const testProducts = [
         " Charge with an Apple Watch or MagSafe charger, USB-C Charge Cable, or Qi-certified charger.",
     ],
     price: 139.99,
-    quantity: 100,
+    stock: 100,
     category: "Headphones",
     brand: "Apple",
     specs: {
@@ -49,7 +49,7 @@ const testProducts = [
       displayType: "",
       screenSize: "",
       screenResolution: "",
-      color: "",
+      color: "White",
     },
     originalPrice: 159.99,
     imageUrl: [
@@ -59,6 +59,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61n7MpBGeBL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Crystal Clear Sound!",
@@ -93,6 +94,42 @@ const testProducts = [
         comment:
           "The noise cancellation is decent, but the sound quality doesn't justify the high price. Expected more from Apple.",
         rating: 2,
+      },
+      {
+        title: "Perfect for the Gym!",
+        comment:
+          "I love using these AirPods Pro 2 during my workouts. They stay in place, and the noise cancellation helps me focus without distractions.",
+        rating: 5,
+      },
+      {
+        title: "Great for Traveling",
+        comment:
+          "I travel frequently and these earbuds are a lifesaver. The noise cancellation works wonders on flights, and the case makes it easy to keep them safe while on the go.",
+        rating: 4,
+      },
+      {
+        title: "Best Sound I’ve Heard!",
+        comment:
+          "The sound quality of these AirPods is amazing. I never realized how much I was missing until I tried these. The bass is deep, and the clarity is crystal clear.",
+        rating: 5,
+      },
+      {
+        title: "Disappointing Battery Life",
+        comment:
+          "While the sound quality is fantastic, the battery life doesn't last long enough for me. I need a bit more longevity out of the battery for long trips.",
+        rating: 3,
+      },
+      {
+        title: "Great Value for the Price",
+        comment:
+          "After trying a few different brands, I find the AirPods Pro 2 to be the best value. They offer excellent sound, good connectivity, and reliable performance for the price.",
+        rating: 4,
+      },
+      {
+        title: "Comfortable but Pricey",
+        comment:
+          "The comfort level is top-notch, and the sound quality is great, but I still think they’re a little overpriced. If you can afford them, they’re worth it.",
+        rating: 3,
       },
     ],
   },
@@ -138,7 +175,7 @@ const testProducts = [
       "Your phone? Your Watch? Your call: Conveniently keep your conversations going even while your Galaxy S24 Ultra phone stays in your pocket. Seamlessly sync your phone and Galaxy Watch in an instant, and enjoy the ease of answering calls and checking texts at a glance.",
     ],
     price: 1000.99,
-    quantity: 50,
+    stock: 50,
     category: "Phones",
     brand: "Samsung",
     specs: {
@@ -159,6 +196,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61cv4U+K9gL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Outstanding Camera Quality",
@@ -216,7 +254,7 @@ const testProducts = [
       "Gaming: With 165 Hz refresh rate it is specially designed for gaming.",
     ],
     price: 149.99,
-    quantity: 26,
+    stock: 26,
     category: "Monitors",
     brand: "ASUS",
     specs: {
@@ -237,6 +275,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71rxc69AZxL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Perfect for Competitive Gaming",
@@ -299,14 +338,14 @@ const testProducts = [
       "PRIVACY AND SECURITY ARE BUILT RIGHT IN: Every Mac comes with robust defenses against viruses and malware. If your Mac is lost or stolen, Find My can help you get it back. FileVault makes sure your files are encrypted so others cannot access them. And free security updates help keep your Mac protected.",
     ],
     price: 1799.99,
-    quantity: 30,
-    category: "Computers",
+    stock: 30,
+    category: "Laptops",
     brand: "Apple",
     specs: {
       processor: "Apple M4 Pro 12-core",
       graphics: "Apple M4 Pro 16-core",
-      memory: "24GB",
-      storage: "512GB",
+      memory: "24GB LPDDR5",
+      storage: "512GB SSD",
       displayType: "Liquid Retina XDR MiniLED",
       screenSize: "14",
       screenResolution: "3024 x 1964",
@@ -320,6 +359,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/612x5YczCzL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Exceptional Performance",
@@ -383,7 +423,7 @@ const testProducts = [
       "SATELLITE CONNECTIVITY: If you don't have cell service or Wi-Fi, iPhone can connect to a satellite so you can send and receive messages and Tapbacks. In a severe car crash, iPhone can connect to emergency services when you can't.",
     ],
     price: 1199.0,
-    quantity: 40,
+    stock: 40,
     category: "Phones",
     brand: "Apple",
     specs: {
@@ -407,6 +447,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/16533a99-f1ce-40d5-be47-ef1b95b5856a.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Incredible Camera System",
@@ -468,7 +509,7 @@ const testProducts = [
       "UNLOCK AND PAY WITH FACE ID: Unlock your iPad Pro, securely authenticate purchases, sign in to apps, and more—all with just a glance.",
     ],
     price: 1199.99,
-    quantity: 14,
+    stock: 14,
     category: "Tablets",
     brand: "Apple",
     specs: {
@@ -489,6 +530,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/71XYcPrgeQL._AC_SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Unmatched Performance",
@@ -574,7 +616,7 @@ const testProducts = [
       "Includes ASTRO’S Playroom: Explore four worlds, each one showcasing innovative gameplay using the versatile features of the DualSense wireless controller, in this game included for all PS5 Pro console users.",
     ],
     price: 699.99,
-    quantity: 10,
+    stock: 10,
     category: "Gaming",
     brand: "Sony",
     specs: {
@@ -595,6 +637,7 @@ const testProducts = [
       "https://m.media-amazon.com/images/I/61wVCsSsy2L._SL1500_.jpg",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Next-Gen Gaming at Its Best",
@@ -655,14 +698,14 @@ const testProducts = [
       "Advanced Connectivity - Stay connected with dual USB-C ports, HDMI 2.1, USB 3.2 Gen2 Type-A ports, and a dedicated UHS-II MicroSD card reader.",
     ],
     price: 2499.99,
-    quantity: 6,
-    category: "Computers",
+    stock: 6,
+    category: "Laptops",
     brand: "ASUS",
     specs: {
       processor: "Intel Core Ultra 9",
       graphics: "NVIDIA GeForce RTX 4090",
       memory: "32GB DDR5",
-      storage: "2TB",
+      storage: "2TB SSD",
       displayType: "OLED 240Hz",
       screenSize: "16",
       screenResolution: "2560 x 1600",
@@ -678,6 +721,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6570/6570220cv15d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Unbeatable Gaming Performance",
@@ -732,7 +776,7 @@ const testProducts = [
       "UNLOCK AND PAY WITH FACE ID—Unlock your iPad Pro, securely authenticate purchases, sign in to apps, and more—all with just a glance.",
     ],
     price: 849.99,
-    quantity: 4,
+    stock: 4,
     category: "Tablets",
     brand: "Apple",
     specs: {
@@ -754,6 +798,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5495/5495362cv14d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Incredible Power and Performance",
@@ -814,14 +859,14 @@ const testProducts = [
       "Try PC Game Pass for free—Play hundreds of high-quality PC games on your new HP device with 3 free months of PC Game Pass.",
     ],
     price: 429.99,
-    quantity: 10,
-    category: "Computers",
+    stock: 10,
+    category: "Laptops",
     brand: "HP",
     specs: {
       processor: "AMD Ryzen 5 7535HS 6-core",
       graphics: "AMD Radeon RX 6550M",
       memory: "8GB DDR5",
-      storage: "512GB",
+      storage: "512GB SSD",
       displayType: "LED IPS 144Hz 300 nits",
       screenSize: "15.6",
       screenResolution: "1920 x 1080",
@@ -836,6 +881,7 @@ const testProducts = [
       "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/bdb82854-72f8-435d-af6e-31e5bee92cb2.jpg;maxHeight=2000;maxWidth=2000;format=webp",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [
       {
         title: "Great Budget Gaming Laptop",
@@ -875,6 +921,116 @@ const testProducts = [
       },
     ],
   },
+  {
+    name: "Alienware - Aurora R16 Gaming Desktop - Intel Core i7-14700KF - 32GB Memory - NVIDIA GeForce RTX 4070 SUPER - 1TB SDD - Black",
+    description:
+      "Designed to prioritize airflow efficiency by introducing larger passageways and optimized internal cable management. This allows fans to be more productive at lower RPM, resulting in quieter acoustics.",
+    features: [
+      "240 MM HEAT EXCHANGER: Game cool and quietly thanks to a 240mm heat exchanger* that heightens the system’s thermal resistance and ensures temperatures stay managed during longer gaming sessions.",
+      "12-Phase Voltage Regulation: All R16 configurations are equipped with 12-phase voltage regulation technology that ensures clean energy is consistently available, enabling [up to 13th Gen Intel Core] processors to deliver high-level performance for hour on end.",
+      "Legend 3 Design: The R16 debuts our minimalist and functional Legend 3 design that focuses on simplicity with features that are optimized for any desktop gaming setup. The R16 is up to 40% smaller, 20% quieter, and 7% cooler than its predecessor.",
+      "High Performance Graphics: Experience immersive gameplay your way by choosing NVIDIA GeForce RTX 40 Series graphics options.",
+      "Total Command: Featuring the revamped Alienware Command Center software, where you can intuitively tailor and monitor your system’s performance and customize lighting and other settings across your setup.",
+    ],
+    price: 2043.99,
+    stock: 3,
+    category: "Desktops",
+    brand: "Alienware",
+    specs: {
+      processor: "Intel Core i7 14700KF",
+      graphics: "NVIDIA GeForce RTX 4070 SUPER",
+      memory: "32GB DDR5",
+      storage: "1TB SSD",
+      displayType: "",
+      screenSize: "",
+      screenResolution: "",
+      color: "Black",
+    },
+    originalPrice: 2199.99,
+    imageUrl: [
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6577/6577352ld.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/19fad074-c569-442c-b6c6-a6713a16fb3a.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6577/6577352cv2d.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/12ddc573-6718-49d0-b4c8-536ba44a0e81.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+      "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6b0b41e3-367d-4de1-9bc2-07dc5c11e36b.jpg;maxHeight=2000;maxWidth=2000;format=webp",
+    ],
+    orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
+    reviews: [
+      {
+        title: "Awesome Performance",
+        comment:
+          "This computer is super fast! I can play all my games on the highest settings and it never lags. The RTX 4070 SUPER is crazy good.",
+        rating: 5,
+      },
+      {
+        title: "Cool and Quiet",
+        comment:
+          "It doesn’t make much noise at all, even when I'm gaming for hours. Plus, it stays cool the whole time, so no worries about overheating.",
+        rating: 5,
+      },
+      {
+        title: "Looks Great",
+        comment:
+          "The design is clean and simple. It fits perfectly in my room, and it’s not too big either, which I like.",
+        rating: 4,
+      },
+      {
+        title: "Plays Everything Smoothly",
+        comment:
+          "All my games look amazing and run smoothly. I can’t believe how good the graphics are. Definitely recommend it for any gamer.",
+        rating: 5,
+      },
+      {
+        title: "Super Easy to Set Up",
+        comment:
+          "Setting up the Alienware was easy, and the software that comes with it makes it even easier to change settings. Great for beginners!",
+        rating: 4,
+      },
+      {
+        title: "Worth the Price",
+        comment:
+          "It’s a little pricey, but totally worth it if you want a high-end gaming desktop. The performance is unbeatable.",
+        rating: 5,
+      },
+      {
+        title: "Best Gaming Rig",
+        comment:
+          "I’ve tried a lot of desktops, but this one blows them all away. The RTX 4070 SUPER makes everything look so realistic. Love it.",
+        rating: 5,
+      },
+      {
+        title: "Super Quiet",
+        comment:
+          "This thing is almost silent. Even when it’s running really hard, you can barely hear it. Perfect for gaming marathons.",
+        rating: 5,
+      },
+      {
+        title: "Great for AAA Games",
+        comment:
+          "I can play all the newest games with no problems. No lag, no freezing. It’s like having a pro gaming setup.",
+        rating: 5,
+      },
+      {
+        title: "Could Use More Storage",
+        comment:
+          "It’s fast with the 1TB SSD, but I wish there was more space for all my games. Definitely need an extra hard drive.",
+        rating: 4,
+      },
+      {
+        title: "Incredible Graphics",
+        comment:
+          "The graphics on this thing are insane. The RTX 4070 SUPER really makes everything look next-level, especially when I play games like Fortnite and Call of Duty.",
+        rating: 5,
+      },
+      {
+        title: "A Beast of a PC",
+        comment:
+          "This is one seriously powerful computer. It can handle everything I throw at it, from gaming to video editing.",
+        rating: 5,
+      },
+    ],
+  },
 ];
 
 const test = async () => {
@@ -908,7 +1064,7 @@ test();
 "",""
     ],
     price: 699.99,
-    quantity: 10,
+    stock: 10,
     category: "",
     brand: "",
     specs: {
@@ -929,6 +1085,7 @@ test();
       "",
     ],
     orderId: null,
+    userId: "d446b038-db54-4dcd-b620-29a256f9d0d3",
     reviews: [{title: "", comment: "", rating: 1}],
   },
 */

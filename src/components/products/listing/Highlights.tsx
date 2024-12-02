@@ -22,7 +22,7 @@ const HighlightScreenSize = ({ screenSize, category }: { screenSize: string; cat
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold text-sm">{screenSize} inches</span>
+        <span className="font-semibold text-[13px]">{screenSize} inches</span>
         <span className="text-xs">Screen Size</span>
         <div className="flex justify-evenly items-center">
           <ScreenIcons num={screenSize ? parseFloat(screenSize) : 0} category={category} />
@@ -36,7 +36,7 @@ const HighlightMemory = ({ memory, category }: { memory: string; category: strin
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold text-sm">{memory}</span>
+        <span className="font-semibold text-[13px]">{memory}</span>
         <span className="text-xs">Memory</span>
         <div className="flex justify-evenly items-center">
           <MemoryIcons num={memory ? parseFloat(memory) : 0} category={category} />
@@ -50,7 +50,7 @@ const HighlightStorage = ({ storage, category }: { storage: string; category: st
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold text-sm">{storage}</span>
+        <span className="font-semibold text-[13px]">{storage}</span>
         <span className="text-xs">Storage/Capacity</span>
         <div className="flex justify-evenly items-center">
           <StorageIcons storage={storage} category={category} />
@@ -64,7 +64,7 @@ const HighlightProcessor = ({ processor, category }: { processor: string; catego
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold whitespace-nowrap text-sm truncate">{processor}</span>
+        <span className="font-semibold whitespace-nowrap text-[13px] truncate">{processor}</span>
         <span className="text-xs">Processor Model</span>
         <div className="flex justify-evenly items-center">
           <ProcessorIcons processor={processor} category={category} />
@@ -78,7 +78,7 @@ const HighlightGraphics = ({ graphics, category }: { graphics: string; category:
   return (
     <div className="border rounded h-70 w-60">
       <div className="m-4 flex flex-col">
-        <span className="font-semibold whitespace-nowrap text-sm">{graphics}</span>
+        <span className="font-semibold whitespace-nowrap text-[13px]">{graphics}</span>
         <span className="text-xs">Graphics Model</span>
         <div className="flex justify-evenly items-center">
           <GraphicsIcons graphics={graphics} category={category} />

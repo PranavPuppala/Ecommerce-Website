@@ -84,7 +84,6 @@ export const ProductCard = ({ product, addButton }: ProductProps) => {
             className=" my-2 w-full bg-blue-600 text-white font-semibold w-3/4 py-1    px-4 gap-x-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center justify-center"
             onClick={() => {
               addToCart(product);
-              alert("Added item to cart");
             }}
           >
             <CartFill />

@@ -17,6 +17,23 @@ export type ReviewState = {
   createdAt: Date;
 };
 
+export type OrderState = {
+  id: string;
+  products: ProductState[];
+  total: number;
+  createdAt: Date;
+};
+
+export type UserState = {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  savedProducts: ProductState[];
+  reviews: ReviewState[];
+  orders: OrderState[];
+};
+
 export type ProductState = {
   id: string;
   name: string;
@@ -24,6 +41,7 @@ export type ProductState = {
   features: string[];
   price: number;
   quantity: number;
+  stock: number;
   category: string;
   brand: string;
   specs: SpecState;

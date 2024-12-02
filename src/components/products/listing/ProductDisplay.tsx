@@ -19,6 +19,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
     features: [],
     price: 0,
     quantity: 0,
+    stock: 0,
     category: "",
     brand: "",
     specs: {
@@ -51,6 +52,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
         features: response.data.features,
         price: response.data.price,
         quantity: response.data.quantity,
+        stock: response.data.stock,
         category: response.data.category,
         brand: response.data.brand,
         specs: {
@@ -94,6 +96,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
           price={product.price}
           originalPrice={product.originalPrice}
           quantity={product.quantity}
+          stock={product.stock}
           brand={product.brand}
           specs={product.specs}
           reviews={product.reviews}
@@ -101,7 +104,7 @@ export const ProductDisplay = ({ id }: { id: string }) => {
         />
       </div>
       <div className="mt-20">
-        {product.category === "Computers" || product.category === "Tablets" ? (
+        {product.category === "Computers" || product.category === "Tablets" || product.category === "Laptops" ? (
           <div className="my-4">
             <span className="font-semibold text-lg">Highlights</span>
             <div className="p-8 flex flex-row gap-x-4">
@@ -123,9 +126,17 @@ export const ProductDisplay = ({ id }: { id: string }) => {
               <HighlightsPanel specs={product.specs} type="screenSize" category={product.category} />
             </div>
           </div>
-        ) : (
-          ""
-        )}
+        ) : product.category === "Desktops" ? (
+          <div className="my-4">
+            <span className="font-semibold text-lg">Highlights</span>
+            <div className="p-8 flex flex-row gap-x-4">
+              <HighlightsPanel specs={product.specs} type="processor" category={product.category} />
+              <HighlightsPanel specs={product.specs} type="graphics" category={product.category} />
+              <HighlightsPanel specs={product.specs} type="memory" category={product.category} />
+              <HighlightsPanel specs={product.specs} type="storage" category={product.category} />
+            </div>
+          </div>
+        ) : null}
 
         <DescriptionPanel description={product.description} features={product.features} specs={product.specs} />
       </div>

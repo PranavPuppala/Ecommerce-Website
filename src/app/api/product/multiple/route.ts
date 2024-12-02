@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/db/db";
+import { ReviewState } from "@/components/products/listing/states";
 
 // Create a product
 export async function POST(req: NextRequest) {
@@ -14,7 +15,12 @@ export async function POST(req: NextRequest) {
             create: product.specs,
           },
           reviews: {
-            create: product.reviews,
+            create: product.reviews.map((review: ReviewState) => ({
+              ...review,
+              user: {
+                connect: { id: product.userId },
+              },
+            })),
           },
         },
       });

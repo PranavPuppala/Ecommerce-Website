@@ -13,14 +13,18 @@ model Product {
     description   String
     features      String[]
     price         Float
-    quantity      Int
+    quantity      Int            @default(0)
+    stock         Int
     category      String
     brand         String
     specs         Specification?
     originalPrice Float
     imageUrl      String[]
-    orderId       String?
     reviews       Review[]
+    orderId       String?
+    order         Order?         @relation(fields: [orderId], references: [id])
+    user          User?          @relation(fields: [userId], references: [id])
+    userId        String?
 }
 
 model Review {
@@ -31,6 +35,8 @@ model Review {
     createdAt DateTime @default(now())
     Product   Product  @relation(fields: [productId], references: [id])
     productId String
+    user      User     @relation(fields: [userId], references: [id])
+    userId    String
 }
 
 model Specification {
@@ -48,8 +54,27 @@ model Specification {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  password String
+    id            String    @id @default(uuid())
+    email         String    @unique
+    password      String
+    role          UserRole  @default(USER)
+    firstName     String    @default("")
+    lastName      String    @default("")
+    savedProducts Product[]
+    reviews       Review[]
+    orders        Order[]
+}
 
+model Order {
+    id        String    @id @default(uuid())
+    products  Product[]
+    total     Float
+    createdAt DateTime  @default(now())
+    user      User      @relation(fields: [userId], references: [id])
+    userId    String
+}
+
+enum UserRole {
+    ADMIN
+    USER
 }

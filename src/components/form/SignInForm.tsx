@@ -17,7 +17,7 @@ const FormSchema = z.object({
       message: "Email is required",
     })
     .email("Invalid email"),
-  password: z.string().min(1, "Password is requied").min(8, "Password must have 8 characters"),
+  password: z.string().min(1, "Password is required").min(8, "Password must have 8 characters"),
 });
 
 const SignInForm = () => {
@@ -61,7 +61,7 @@ const SignInForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Email goes here" {...field} />
+                    <Input placeholder="Enter Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -75,7 +75,7 @@ const SignInForm = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input placeholder="Password goes here" type="password" {...field} />
+                    <Input placeholder="Enter password" type="password" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -1,7 +1,12 @@
-export default function Orders() {
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+
+export default async function Orders() {
+  const session = await getServerSession(authOptions);
   return (
     <div>
-      <p>Page will display ALL orders of the user</p>
+      <p>server session</p>
+      {JSON.stringify(session)}
     </div>
   );
 }

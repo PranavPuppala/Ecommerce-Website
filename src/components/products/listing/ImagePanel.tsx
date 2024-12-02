@@ -22,7 +22,17 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
             }}
           >
             <div className="h-full w-full flex items-center justify-center rounded-md bg-white overflow-hidden relative">
-              {imageUrl ? <Image src={imageUrl} alt="Product" className="object-contain" fill /> : null}
+              {imageUrl ? (
+                <Image
+                  src={imageUrl}
+                  alt="Product"
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={500}
+                  height={500}
+                  priority
+                />
+              ) : null}
             </div>
           </button>
         ))}
@@ -37,9 +47,11 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
                 <Image
                   src={imageUrls[4]}
                   alt={"More"}
-                  className="object-contain w-full h-full"
+                  className="object-contain w-auto h-auto"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   width={500}
                   height={500}
+                  priority
                 />
               </div>
               <div className="absolute inset-0 bg-neutral-950 bg-opacity-50 flex flex-col items-center justify-center">
@@ -58,9 +70,11 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
             <Image
               src={currentImage}
               alt={"Product"}
-              className="object-contain w-full h-full"
+              className="object-contain w-auto h-auto"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               width={500}
               height={500}
+              priority
             />
           ) : null}
         </div>
