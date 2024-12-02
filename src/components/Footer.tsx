@@ -15,12 +15,12 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Order & Purchases</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/support" className="hover:underline">
+                <Link href="/order" className="hover:underline">
                   Check Order Status
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="hover:underline">
+                <Link href="/support/returns" className="hover:underline">
                   Returns & Exchanges
                 </Link>
               </li>

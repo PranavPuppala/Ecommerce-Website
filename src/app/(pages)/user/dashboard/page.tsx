@@ -24,6 +24,7 @@ export default async function UserProfile() {
       email={userData.email}
       firstName={userData.firstName}
       lastName={userData.lastName}
+      orders={userData.orders}
       savedProducts={userData.savedProducts}
     />
   );

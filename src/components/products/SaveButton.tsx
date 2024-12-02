@@ -41,7 +41,7 @@ const SaveProductButton = ({ userId, productId }: { userId: string; productId: s
       if (response.ok) {
         setSaved(!saved); // Toggle the saved state
       } else {
-        alert("Error toggling save state");
+        alert("Error saving: Please log in to save.");
       }
     } catch (error) {
       console.error("Error toggling save state:", error);

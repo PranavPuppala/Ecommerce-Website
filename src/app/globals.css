@@ -58,8 +58,49 @@ body {
 }
 
 .star {
-  color: #fbbf24; /* Amber color for stars */
+  color: #fbbf24;
   font-size: 1rem;
   line-height: 1;
 }
+@keyframes progress-flow {
+  0% {
+    background-position: -200%; /* Start from left */
+  }
+  100% {
+    background-position: 200%; /* End on the right */
+  }
+}
 
+.animate-progress {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    45deg,
+    #30bfd8 25%,
+    #00c6e9 25%,
+    #00c6e9 50%,
+    #30bfd8 50%,
+    #30bfd8 75%,
+    #00c6e9 75%,
+    #00c6e9 100%
+  );
+  background-size: 80px 80px;
+  animation: progress-flow 200s linear infinite;
+}
+
+.animate-progress-shipped {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    45deg,
+    #00e626 25%,
+    #00d370 25%,
+    #00d370 50%,
+    #00e626 50%,
+    #00e626 75%,
+    #00d370 75%,
+    #00d370 100%
+  );
+  background-size: 80px 80px;
+  animation: progress-flow 200s linear infinite;
+}

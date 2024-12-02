@@ -4,10 +4,50 @@ import React, { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { OrderState, ProductState } from "@/components/products/listing/states";
+
+const createOrder = async (userId: string, cartItems: ProductState[], totalCost: number, clearCart: () => void) => {
+  const order = {
+    products: cartItems.map((item: any) => ({
+      productId: item.id,
+      quantity: item.quantity,
+      originalPrice: item.originalPrice,
+      totalPrice: item.price * item.quantity,
+      image: item.imageUrl[0],
+    })),
+    total: totalCost,
+    status: "Pending",
+    timeEstimate: "3-5 business days",
+    createdAt: new Date(),
+    userId,
+  };
+
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/orders`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(order),
+    });
+
+    if (response.ok) {
+      clearCart();
+    } else {
+      console.error("Failed to place order");
+    }
+  } catch (error) {
+    console.error("Error placing order:", error);
+  } finally {
+    alert("Order placed successfully!");
+  }
+};
 
 const CartPage = () => {
-  const { cartItems, removeFromCart, updateQuantity, totalCost, totalOriginalCost, totalSavings } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, totalCost, totalOriginalCost, totalSavings, clearCart } =
+    useCart();
   const [isHydrated, setIsHydrated] = useState(false);
+
+  const { data: session } = useSession();
 
   useEffect(() => {
     setIsHydrated(true);
@@ -30,7 +70,6 @@ const CartPage = () => {
                 <ul className="space-y-4">
                   {cartItems.map((product) => (
                     <li key={product.id} className="flex justify-between items-center border p-4 bg-white rounded">
-                      {/* Product Image container*/}
                       <div className="flex flex-row gap-x-8">
                         <div className="w-32 h-32 flex-shrink-0">
                           {typeof window !== "undefined" && (
@@ -45,7 +84,6 @@ const CartPage = () => {
                           )}
                         </div>
 
-                        {/* Product Info container*/}
                         <div>
                           <Link href={"/product/[id]"} as={`/product/${encodeURIComponent(product.id)}`}>
                             <span className="text-blue-600 hover:underline">{product.name}</span>
@@ -66,9 +104,7 @@ const CartPage = () => {
                         </div>
                       </div>
 
-                      {/* Cart Buttons */}
                       <div className="flex flex-col items-center px-8 gap-y-4 ml-4">
-                        {/* Quantity Buttons */}
                         <div className="flex items-center">
                           <button
                             type="button"
@@ -89,7 +125,6 @@ const CartPage = () => {
                           </button>
                         </div>
 
-                        {/* Remove Button */}
                         <button
                           type="button"
                           onClick={() => removeFromCart(product.id)}
@@ -138,7 +173,8 @@ const CartPage = () => {
             <button
               type="button"
               className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-              onClick={() => {}}
+              onClick={() => createOrder(session?.user.id, cartItems, totalCost, clearCart)}
+              disabled={cartItems.length === 0}
             >
               <Link href={cartItems.length === 0 ? "/" : ""}>
                 {cartItems.length === 0 ? "Continue Shopping" : "Checkout"}
