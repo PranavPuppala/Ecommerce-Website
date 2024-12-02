@@ -18,10 +18,20 @@ export type ReviewState = {
 };
 
 export type OrderState = {
-  id: string;
-  products: ProductState[];
+  products: OrderItemState[];
   total: number;
+  status: String;
+  timeEstimate: String;
   createdAt: Date;
+  userId: String;
+};
+
+export type OrderItemState = {
+  quantity: number;
+  originalPrice: number;
+  totalPrice: number;
+  image: String;
+  productId: String;
 };
 
 export type UserState = {

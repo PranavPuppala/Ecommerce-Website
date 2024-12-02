@@ -12,6 +12,7 @@ interface CartContextType {
   totalOriginalCost: number;
   totalSavings: number;
   totalQuantity: number;
+  clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -59,6 +60,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       return updatedItems;
     });
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.setItem("cartItems", JSON.stringify([]));
   };
 
   const removeFromCart = (id: string) => {
@@ -121,6 +127,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         totalOriginalCost,
         totalSavings,
         totalQuantity,
+        clearCart,
       }}
     >
       {children}

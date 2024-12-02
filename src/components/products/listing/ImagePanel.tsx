@@ -26,7 +26,7 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
                 <Image
                   src={imageUrl}
                   alt="Product"
-                  className="object-contain"
+                  className="object-contain w-full h-full max-w-full max-h-full"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   width={500}
                   height={500}
@@ -70,7 +70,7 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
             <Image
               src={currentImage}
               alt={"Product"}
-              className="object-contain w-auto h-auto"
+              className="object-contain w-full h-full max-w-full max-h-full"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               width={500}
               height={500}
@@ -79,6 +79,55 @@ export const ImagePanel = ({ imageUrls }: { imageUrls: string[] }) => {
           ) : null}
         </div>
       </div>
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={handleToggle}
+        >
+          <div className="flex bg-white w-2/3 h-2/3 rounded overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="h-full overflow-y-scroll p-4 grid grid-cols-2 gap-2 auto-rows-min">
+              {imageUrls.map((imageUrl, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className="inline-flex items-center justify-center border border-gray-500 h-20 w-20 rounded-md"
+                  onClick={() => {
+                    setCurrentImage(imageUrl);
+                  }}
+                >
+                  <div className="h-full w-full flex items-center justify-center rounded-md bg-white overflow-hidden relative">
+                    {imageUrl ? (
+                      <Image
+                        src={imageUrl}
+                        alt="Product"
+                        className="object-contain w-full h-full max-w-full max-h-full"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        width={500}
+                        height={500}
+                        priority
+                      />
+                    ) : null}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <div className="w-3/4 h-full flex items-center justify-center p-16 m-auto">
+              {currentImage ? (
+                <Image
+                  src={currentImage}
+                  alt={"Product"}
+                  className="object-contain w-full h-full max-w-full max-h-full"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={500}
+                  height={500}
+                  priority
+                />
+              ) : null}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

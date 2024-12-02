@@ -23,13 +23,6 @@ type ProductDiffState = {
   reviews?: string;
 };
 
-type OrderDiffState = {
-  id: string;
-  products?: ProductDiffState[];
-  total: number;
-  createdAt: Date;
-};
-
 type ProfileProps = {
   email: string;
   firstName: string;
@@ -87,6 +80,41 @@ export const Profile = ({ email, firstName, lastName, orders, savedProducts }: P
                     </div>
                   ))
                 : null}
+            </div>
+            <div className="text-left border-t-2 mx-2 pt-2 flex flex-col">
+              <p>Orders</p>
+              <ul className="space-y-6">
+                {orders
+                  ? orders.map((order: any, index) => (
+                      <li key={order.id} className="p-6 border-b flex flex-col space-y-4 bg-white">
+                        <h2 className="text-2xl font-semibold">Order #{index + 1}</h2>
+                        <p className="text-lg">Status: {order.status}</p>
+                        <p className="text-lg">Time Estimate: {order.timeEstimate}</p>
+                        <div className="gap-4 flex flex-row">
+                          {order.products.map((item: any) => (
+                            <div key={item.productId} className="flex items-center space-x-4">
+                              {item.image && item.image.length > 0 && (
+                                <Image
+                                  src={item.image}
+                                  alt={"Product"}
+                                  className="w-20 h-20 object-contain"
+                                  width={500}
+                                  height={500}
+                                  priority
+                                />
+                              )}
+                              <div>
+                                <p className="text-lg font-semibold">{item.name}</p>
+                                <p className="text-sm text-gray-500">Quantity: {item.quantity}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-xl font-bold text-green-600">Total: ${order.total.toFixed(2)}</p>
+                      </li>
+                    ))
+                  : null}
+              </ul>
             </div>
           </span>
         </span>
