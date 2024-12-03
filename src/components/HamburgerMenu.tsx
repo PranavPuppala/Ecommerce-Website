@@ -27,8 +27,8 @@ export const HamburgerMenu = () => {
     {
       name: "TVs & Home Audio",
       subItems: [
-        { name: "Soundbars", href: "/search?q=soundbar" },
-        { name: "All TVs", href: "/product/category/TV" },
+        { name: "Soundbars", href: "/product/category/Soundbars" },
+        { name: "All TVs", href: "/product/category/TVs" },
       ],
     },
     {

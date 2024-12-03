@@ -15,6 +15,8 @@ export default function Home() {
   const router = useRouter();
   const [products, setProducts] = useState<ProductState[]>([]);
 
+  const randomizedProducts = [...products].sort(() => Math.random() - 0.5);
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -53,7 +55,7 @@ export default function Home() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-4 px-48 py-2">
-        {products.map((product, index) => (
+        {randomizedProducts.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>
