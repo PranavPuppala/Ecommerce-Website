@@ -38,6 +38,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       const existingItem = prev.find((i) => i.id === item.id);
       const currentQuantity = existingItem ? existingItem.quantity : 0;
 
+      /*
       // If adding more than the price-based quantity limit, show an alert
       if (currentQuantity + 1 > priceLimitQuantity) {
         return prev;
@@ -48,6 +49,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         return prev;
       }
 
+      */
       // Update cart items
       const updatedItems = existingItem
         ? prev.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i))
@@ -55,8 +57,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       // Update localStorage immediately
       localStorage.setItem("cartItems", JSON.stringify(updatedItems));
-
-      alert("added to cart");
 
       return updatedItems;
     });
@@ -81,6 +81,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
           // Ensure the quantity is within bounds
           const updatedQuantity = Math.max(1, Math.min(quantity, 99));
 
+          /*
           // Check if the updated quantity exceeds the price-based limit
           if (updatedQuantity > priceLimitQuantity) {
             return item;
@@ -89,7 +90,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
           // Check if the updated quantity exceeds available stock
           if (updatedQuantity > item.stock) {
             return item;
-          }
+          }*/
 
           return { ...item, quantity: updatedQuantity };
         }

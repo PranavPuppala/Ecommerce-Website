@@ -16,7 +16,8 @@ const AddReview = ({
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: name === "rating" ? parseInt(value, 10) : value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
